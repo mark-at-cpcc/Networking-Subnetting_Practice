@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 2 &mdash; Binary Math | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 1: Number Systems &middot; Module 2</div>
+            <h1 class="module-title">Binary Math</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.7</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item"><a href="Module1_Binary-and-Decimal.html">Module 1 &mdash; Binary and Decimal Number Systems</a></div>
+            <div class="toc-item current" id="tocCurrent">Module 2 &mdash; Binary Math</div>
+            <div class="toc-item"><a href="Module3_Hexadecimal-Part-I.html">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</a></div>
+            <div class="toc-item"><a href="Module4_Hexadecimal-Part-II.html">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</a></div>
+            <div class="toc-item"><a href="Module5_Classful-IPv4-Part-I.html">Module 5 &mdash; Classful IPv4 Addressing, Part I</a></div>
+            <div class="toc-item"><a href="Module6_Classful-IPv4-Part-II.html">Module 6 &mdash; Classful IPv4 Addressing, Part II</a></div>
+            <div class="toc-item"><a href="Module7_IPv6-Addressing.html">Module 7 &mdash; IPv6 Addressing</a></div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item"><a href="Module9_CIDR-Network-Calculations.html">Module 9 &mdash; CIDR: Subnetting for Networks</a></div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Apply</strong> the four binary addition rules, including adding a carried bit</li>
+                    <li><strong>Add</strong> two 8-bit binary numbers and verify the result in decimal</li>
+                    <li><strong>Distinguish</strong> carrying a bit in arithmetic from borrowing bits in subnetting</li>
+                    <li><strong>Explain</strong> how counting up in binary reveals where one subnet ends and the next begins</li>
+                </ol>
+            </div>
+            <h2>Why Binary Math Matters for Subnetting</h2>
+            <p>Subnetting is mostly counting. Every time you find the next network address, you are adding to a binary number and watching where the carry lands. If the carry spills into a bit that belongs to the network portion of the address, you have crossed into the next subnet. This module makes that carry automatic, so you can see it happen instead of memorizing it.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>Binary addition follows the same column-by-column algorithm as decimal addition, using only the digits 0 and 1. A column whose total exceeds 1 produces a <strong>carry</strong> into the next more significant place. The result of an 8-bit addition can be verified by converting the operands and the sum to decimal.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Add the way you learned in grade school: right to left, one column at a time. The only new fact is that two 1s make &ldquo;10,&rdquo; so you write 0 and carry 1, just like 9 + 1 makes you write 0 and carry 1 in decimal.</p></div>
+            </div>
+            <h2>The Rules</h2>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Add</th><th>Result</th><th>Write</th><th>Carry</th></tr></thead>
+                    <tbody>
+                        <tr><td>0 + 0</td><td>0</td><td>0</td><td>nothing</td></tr>
+                        <tr><td>0 + 1 or 1 + 0</td><td>1</td><td>1</td><td>nothing</td></tr>
+                        <tr><td>1 + 1</td><td>10</td><td>0</td><td>1</td></tr>
+                        <tr><td>1 + 1 + 1 (with a carry)</td><td>11</td><td>1</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="key-concept">
+                <h4>Carrying Is Not Borrowing</h4>
+                <p>When a column overflows, the extra 1 is <strong>carried</strong> to the left. In subnetting you will also hear <strong>borrowing bits</strong>, which means something different: taking bits from the host portion of an address to create more networks. Keep the two words separate and the CIDR modules will make sense.</p>
+            </div>
+            <h3>Worked Example 1: 2 + 4 = 6</h3>
+            <p>Add <code>00000010</code> + <code>00000100</code>. Work it on paper, then compare.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <ol>
+                        <li>The 2 column: 1 + 0 = 1, so write <strong>1</strong>.</li>
+                        <li>The 4 column: 0 + 1 = 1, so write <strong>1</strong>.</li>
+                    </ol>
+                    <p>Every other column is 0 + 0 = 0.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Placeholder</th><th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+                    <tbody>
+                        <tr><td>Carry in</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>First number</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>Second number</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td><strong>Result</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>0</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>Result: <strong><code>00000110</code></strong> = 6. Decimal check: 2 + 4 = 6.</p>
+                </div>
+            </div>
+            <h3>Worked Example 2: 3 + 5 = 8</h3>
+            <p>Add <code>00000011</code> + <code>00000101</code>. Work it on paper, then compare.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <ol>
+                        <li>The 1 column: 1 + 1 = 10, so write <strong>0</strong> and carry 1 into the 2 column.</li>
+                        <li>The 2 column: 1 + 1 + 0 = 10, so write <strong>0</strong> and carry 1 into the 4 column.</li>
+                        <li>The 4 column: 1 + 0 + 1 = 10, so write <strong>0</strong> and carry 1 into the 8 column.</li>
+                        <li>The 8 column: 1 + 0 + 0 = 1, so write <strong>1</strong>.</li>
+                    </ol>
+                    <p>Every other column is 0 + 0 = 0.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Placeholder</th><th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+                    <tbody>
+                        <tr><td>Carry in</td><td></td><td></td><td></td><td></td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>1</strong></td><td></td></tr>
+                        <tr><td>First number</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+                        <tr><td>Second number</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+                        <tr><td><strong>Result</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>1</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>Result: <strong><code>00001000</code></strong> = 8. Decimal check: 3 + 5 = 8.</p>
+                </div>
+            </div>
+            <h3>Worked Example 3: 11 + 7 = 18</h3>
+            <p>Add <code>00001011</code> + <code>00000111</code>. Work it on paper, then compare.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <ol>
+                        <li>The 1 column: 1 + 1 = 10, so write <strong>0</strong> and carry 1 into the 2 column.</li>
+                        <li>The 2 column: 1 + 1 + 1 = 11, so write <strong>1</strong> and carry 1 into the 4 column.</li>
+                        <li>The 4 column: 1 + 0 + 1 = 10, so write <strong>0</strong> and carry 1 into the 8 column.</li>
+                        <li>The 8 column: 1 + 1 + 0 = 10, so write <strong>0</strong> and carry 1 into the 16 column.</li>
+                        <li>The 16 column: 1 + 0 + 0 = 1, so write <strong>1</strong>.</li>
+                    </ol>
+                    <p>Every other column is 0 + 0 = 0.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Placeholder</th><th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+                    <tbody>
+                        <tr><td>Carry in</td><td></td><td></td><td></td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>1</strong></td><td></td></tr>
+                        <tr><td>First number</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                        <tr><td>Second number</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+                        <tr><td><strong>Result</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>1</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>1</strong></td><td><strong>0</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>Result: <strong><code>00010010</code></strong> = 18. Decimal check: 11 + 7 = 18.</p>
+                </div>
+            </div>
+            <h3>Two Ways to Get the Answer</h3>
+            <p><strong>Method A</strong> converts both numbers to decimal, adds, and converts back. <strong>Method B</strong> adds directly in binary. Both give the same result, because the math does not change with the base. Method B is faster once the carry is automatic, and it is the method that shows you where subnet boundaries fall.</p>
+            <div class="cpcc-order" data-title="Put the binary addition steps in order" data-perfect="That is the method. The decimal check catches almost every slip.">
+                <script type="application/json" class="cpcc-order-bank">["Line up both 8-bit numbers under the placeholders", "Start in the right-most (1) column", "Add the two bits plus any carried 1", "Write the right digit of the column total", "Carry a 1 into the next column if the total was 10 or 11", "Repeat for each column moving left", "Check the result by converting to decimal"]</script>
+            </div>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>A network ends at 192.168.1.31, and you need the next network address. In the last octet, <code>00011111</code> + 1 carries all the way into the 32 placeholder and gives <code>00100000</code>, which is 32. The next network is 192.168.1.32. That one carry is the whole idea behind the network address tables in Modules 8 through 10.</p></div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>The 1 + 1 + 1 column. With two 1s plus a carry, the total is 11: write 1 <em>and</em> carry 1. Students often write 0 because &ldquo;1 + 1 makes 0.&rdquo; Slow down on any column that receives a carry.</p></div>
+            </div>
+            <h2>Practice Problems</h2>
+            <p>Solve each of these ten addition problems on paper, then open the answer key.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>#</th><th>Problem</th><th>Your Answer</th><th>Decimal Check</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td><code>00000101</code> + <code>00000010</code></td><td></td><td></td></tr>
+                        <tr><td>2</td><td><code>00000111</code> + <code>00000010</code></td><td></td><td></td></tr>
+                        <tr><td>3</td><td><code>00001010</code> + <code>00000110</code></td><td></td><td></td></tr>
+                        <tr><td>4</td><td><code>00001010</code> + <code>00001010</code></td><td></td><td></td></tr>
+                        <tr><td>5</td><td><code>00001010</code> + <code>00001111</code></td><td></td><td></td></tr>
+                        <tr><td>6</td><td><code>00001011</code> + <code>00000101</code></td><td></td><td></td></tr>
+                        <tr><td>7</td><td><code>00011110</code> + <code>00001110</code></td><td></td><td></td></tr>
+                        <tr><td>8</td><td><code>00100110</code> + <code>00001101</code></td><td></td><td></td></tr>
+                        <tr><td>9</td><td><code>00101110</code> + <code>10011001</code></td><td></td><td></td></tr>
+                        <tr><td>10</td><td><code>10101001</code> + <code>00011010</code></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>#</th><th>Problem</th><th>Answer</th><th>Decimal check</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td><code>00000101</code> + <code>00000010</code></td><td><code>00000111</code></td><td>5 + 2 = 7</td></tr>
+                        <tr><td>2</td><td><code>00000111</code> + <code>00000010</code></td><td><code>00001001</code></td><td>7 + 2 = 9</td></tr>
+                        <tr><td>3</td><td><code>00001010</code> + <code>00000110</code></td><td><code>00010000</code></td><td>10 + 6 = 16</td></tr>
+                        <tr><td>4</td><td><code>00001010</code> + <code>00001010</code></td><td><code>00010100</code></td><td>10 + 10 = 20</td></tr>
+                        <tr><td>5</td><td><code>00001010</code> + <code>00001111</code></td><td><code>00011001</code></td><td>10 + 15 = 25</td></tr>
+                        <tr><td>6</td><td><code>00001011</code> + <code>00000101</code></td><td><code>00010000</code></td><td>11 + 5 = 16</td></tr>
+                        <tr><td>7</td><td><code>00011110</code> + <code>00001110</code></td><td><code>00101100</code></td><td>30 + 14 = 44</td></tr>
+                        <tr><td>8</td><td><code>00100110</code> + <code>00001101</code></td><td><code>00110011</code></td><td>38 + 13 = 51</td></tr>
+                        <tr><td>9</td><td><code>00101110</code> + <code>10011001</code></td><td><code>11000111</code></td><td>46 + 153 = 199</td></tr>
+                        <tr><td>10</td><td><code>10101001</code> + <code>00011010</code></td><td><code>11000011</code></td><td>169 + 26 = 195</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h2>Module 2 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 28-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-2.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 2 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>Binary addition uses the same right-to-left column method as decimal addition.</li>
+                    <li>1 + 1 = 10 (write 0, carry 1) and 1 + 1 + 1 = 11 (write 1, carry 1).</li>
+                    <li>Carrying moves an overflow to the next placeholder; borrowing is a different, subnetting-only idea.</li>
+                    <li>Checking in decimal is the fastest way to catch a mistake.</li>
+                    <li>Counting up by one in binary shows exactly where one subnet ends and the next begins.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://www.professormesser.com/network-plus/n10-009/n10-009-video/binary-math-n10-009/" target="_blank" rel="noopener">Professor Messer: Binary Math &ndash; CompTIA Network+ N10-009 &ndash; 1.7</a> (free video, about 9 minutes)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>

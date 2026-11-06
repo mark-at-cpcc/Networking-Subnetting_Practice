@@ -1,0 +1,398 @@
+[
+ {
+  "q": "Convert the hex value <code>19</code> to binary.",
+  "opts": [
+   "<code>0001 1001</code>",
+   "<code>1001 0001</code>",
+   "<code>0001 1011</code>",
+   "<code>0011 1001</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: 1 = 0001 and 9 = 1001."
+ },
+ {
+  "q": "Convert the hex value <code>28</code> to binary.",
+  "opts": [
+   "<code>0010 1000</code>",
+   "<code>1000 0010</code>",
+   "<code>0010 1100</code>",
+   "<code>1010 1000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: 2 = 0010 and 8 = 1000."
+ },
+ {
+  "q": "Convert the hex value <code>39</code> to binary.",
+  "opts": [
+   "<code>0011 1001</code>",
+   "<code>1001 0011</code>",
+   "<code>0011 0001</code>",
+   "<code>1011 1001</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: 3 = 0011 and 9 = 1001."
+ },
+ {
+  "q": "Convert the hex value <code>DB</code> to binary.",
+  "opts": [
+   "<code>1101 1011</code>",
+   "<code>1011 1101</code>",
+   "<code>1101 1010</code>",
+   "<code>1001 1011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: D = 1101 and B = 1011."
+ },
+ {
+  "q": "Convert the hex value <code>98</code> to binary.",
+  "opts": [
+   "<code>1001 1000</code>",
+   "<code>1000 1001</code>",
+   "<code>1001 1001</code>",
+   "<code>1000 1000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: 9 = 1001 and 8 = 1000."
+ },
+ {
+  "q": "Convert the hex value <code>C2</code> to binary.",
+  "opts": [
+   "<code>1100 0010</code>",
+   "<code>0010 1100</code>",
+   "<code>1100 1010</code>",
+   "<code>1110 0010</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: C = 1100 and 2 = 0010."
+ },
+ {
+  "q": "Convert the hex value <code>8F</code> to binary.",
+  "opts": [
+   "<code>1000 1111</code>",
+   "<code>1111 1000</code>",
+   "<code>1000 1011</code>",
+   "<code>1001 1111</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: 8 = 1000 and F = 1111."
+ },
+ {
+  "q": "Convert the hex value <code>E3</code> to binary.",
+  "opts": [
+   "<code>1110 0011</code>",
+   "<code>0011 1110</code>",
+   "<code>1110 1011</code>",
+   "<code>1010 0011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: E = 1110 and 3 = 0011."
+ },
+ {
+  "q": "Convert the hex value <code>C5</code> to binary.",
+  "opts": [
+   "<code>1100 0101</code>",
+   "<code>0101 1100</code>",
+   "<code>1100 0100</code>",
+   "<code>1110 0101</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: C = 1100 and 5 = 0101."
+ },
+ {
+  "q": "Convert the hex value <code>48</code> to binary.",
+  "opts": [
+   "<code>0100 1000</code>",
+   "<code>1000 0100</code>",
+   "<code>0100 1100</code>",
+   "<code>0110 1000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Convert each hex digit to its own 4 bits: 4 = 0100 and 8 = 1000."
+ },
+ {
+  "q": "Convert the binary value <code>0100 0110</code> to hexadecimal.",
+  "opts": [
+   "<code>46</code>",
+   "<code>64</code>",
+   "<code>42</code>",
+   "<code>56</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 0100 = 4 and 0110 = 6."
+ },
+ {
+  "q": "Convert the binary value <code>1100 0100</code> to hexadecimal.",
+  "opts": [
+   "<code>C4</code>",
+   "<code>4C</code>",
+   "<code>C6</code>",
+   "<code>84</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 1100 = C and 0100 = 4."
+ },
+ {
+  "q": "Convert the binary value <code>1001 0111</code> to hexadecimal.",
+  "opts": [
+   "<code>97</code>",
+   "<code>79</code>",
+   "<code>95</code>",
+   "<code>87</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 1001 = 9 and 0111 = 7."
+ },
+ {
+  "q": "Convert the binary value <code>1111 0011</code> to hexadecimal.",
+  "opts": [
+   "<code>F3</code>",
+   "<code>3F</code>",
+   "<code>F7</code>",
+   "<code>B3</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 1111 = F and 0011 = 3."
+ },
+ {
+  "q": "Convert the binary value <code>1110 0000</code> to hexadecimal.",
+  "opts": [
+   "<code>E0</code>",
+   "<code>0E</code>",
+   "<code>E2</code>",
+   "<code>A0</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 1110 = E and 0000 = 0."
+ },
+ {
+  "q": "Convert the binary value <code>0010 0011</code> to hexadecimal.",
+  "opts": [
+   "<code>23</code>",
+   "<code>32</code>",
+   "<code>2B</code>",
+   "<code>03</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 0010 = 2 and 0011 = 3."
+ },
+ {
+  "q": "Convert the binary value <code>0101 0110</code> to hexadecimal.",
+  "opts": [
+   "<code>56</code>",
+   "<code>65</code>",
+   "<code>54</code>",
+   "<code>46</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 0101 = 5 and 0110 = 6."
+ },
+ {
+  "q": "Convert the binary value <code>1110 1000</code> to hexadecimal.",
+  "opts": [
+   "<code>E8</code>",
+   "<code>8E</code>",
+   "<code>EA</code>",
+   "<code>68</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Split into two 4-bit groups: 1110 = E and 1000 = 8."
+ },
+ {
+  "q": "What is the decimal value of the single hex digit <code>A</code>?",
+  "opts": [
+   "10",
+   "11",
+   "9",
+   "12"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Hex counts 0&ndash;9, then A = 10, B = 11, C = 12, D = 13, E = 14, F = 15."
+ },
+ {
+  "q": "What is the decimal value of the single hex digit <code>B</code>?",
+  "opts": [
+   "11",
+   "12",
+   "10",
+   "13"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Hex counts 0&ndash;9, then A = 10, B = 11, C = 12, D = 13, E = 14, F = 15."
+ },
+ {
+  "q": "What is the decimal value of the single hex digit <code>C</code>?",
+  "opts": [
+   "12",
+   "13",
+   "11",
+   "14"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Hex counts 0&ndash;9, then A = 10, B = 11, C = 12, D = 13, E = 14, F = 15."
+ },
+ {
+  "q": "What is the decimal value of the single hex digit <code>D</code>?",
+  "opts": [
+   "13",
+   "14",
+   "12",
+   "15"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Hex counts 0&ndash;9, then A = 10, B = 11, C = 12, D = 13, E = 14, F = 15."
+ },
+ {
+  "q": "What is the decimal value of the single hex digit <code>E</code>?",
+  "opts": [
+   "14",
+   "15",
+   "13",
+   "8"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Hex counts 0&ndash;9, then A = 10, B = 11, C = 12, D = 13, E = 14, F = 15."
+ },
+ {
+  "q": "What is the decimal value of the single hex digit <code>F</code>?",
+  "opts": [
+   "15",
+   "9",
+   "14",
+   "1"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Hex counts 0&ndash;9, then A = 10, B = 11, C = 12, D = 13, E = 14, F = 15."
+ },
+ {
+  "q": "What is the decimal value 26 in two-digit hexadecimal?",
+  "opts": [
+   "<code>1A</code>",
+   "<code>2A</code>",
+   "<code>19</code>",
+   "<code>A1</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "26 in binary is 00011010. Group it as 0001 1010, which is 1A."
+ },
+ {
+  "q": "What is the decimal value 175 in two-digit hexadecimal?",
+  "opts": [
+   "<code>AF</code>",
+   "<code>BF</code>",
+   "<code>AE</code>",
+   "<code>FA</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "175 in binary is 10101111. Group it as 1010 1111, which is AF."
+ },
+ {
+  "q": "What is the decimal value 200 in two-digit hexadecimal?",
+  "opts": [
+   "<code>C8</code>",
+   "<code>D8</code>",
+   "<code>C7</code>",
+   "<code>8C</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "200 in binary is 11001000. Group it as 1100 1000, which is C8."
+ },
+ {
+  "q": "What is the decimal value 77 in two-digit hexadecimal?",
+  "opts": [
+   "<code>4D</code>",
+   "<code>5D</code>",
+   "<code>4C</code>",
+   "<code>D4</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "77 in binary is 01001101. Group it as 0100 1101, which is 4D."
+ },
+ {
+  "q": "How many bits are in a MAC address?",
+  "opts": [
+   "48",
+   "32",
+   "64",
+   "128"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "A MAC address is 48 bits, written as 12 hex digits in 6 pairs."
+ },
+ {
+  "q": "How many bits does one hexadecimal digit represent?",
+  "opts": [
+   "4",
+   "8",
+   "2",
+   "16"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Sixteen values (0&ndash;F) need exactly 4 bits, so one hex digit is always one 4-bit group."
+ },
+ {
+  "q": "In the MAC address <code>00:50:56:C0:00:08</code>, which part identifies the manufacturer?",
+  "opts": [
+   "<code>00:50:56</code>, the first 24 bits (the OUI)",
+   "<code>C0:00:08</code>, the last 24 bits",
+   "<code>00:08</code>, the last 16 bits",
+   "The whole address"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first 24 bits are the Organizationally Unique Identifier (OUI) assigned to the manufacturer; the last 24 bits identify the individual interface."
+ },
+ {
+  "q": "How many hex digits are written in a MAC address?",
+  "opts": [
+   "12",
+   "6",
+   "8",
+   "16"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "48 bits divided by 4 bits per hex digit is 12 digits, usually shown as 6 pairs."
+ },
+ {
+  "q": "What is the largest value a single hex digit can hold?",
+  "opts": [
+   "F, which is 15 or <code>1111</code>",
+   "9",
+   "16",
+   "FF"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "F is the last of the sixteen characters 0&ndash;F and equals 15, all four bits on."
+ }
+]

@@ -1,0 +1,338 @@
+[
+ {
+  "q": "Add in binary: <code>01100100</code> + <code>00110100</code> = ?",
+  "opts": [
+   "<code>10011000</code>",
+   "<code>01010000</code>",
+   "<code>01110100</code>",
+   "<code>10010000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 100 + 52 = 152, and 152 in binary is 10011000."
+ },
+ {
+  "q": "What is the decimal value of <code>01110010</code> + <code>00011100</code>?",
+  "opts": [
+   "142",
+   "110",
+   "150",
+   "140"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "01110010 is 114 and 00011100 is 28, so the sum is 142 (10001110)."
+ },
+ {
+  "q": "Add in binary: <code>00001010</code> + <code>00111001</code> = ?",
+  "opts": [
+   "<code>01000011</code>",
+   "<code>00110011</code>",
+   "<code>01001011</code>",
+   "<code>00111011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 10 + 57 = 67, and 67 in binary is 01000011."
+ },
+ {
+  "q": "What is the decimal value of <code>00000111</code> + <code>01110110</code>?",
+  "opts": [
+   "125",
+   "113",
+   "129",
+   "109"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "00000111 is 7 and 01110110 is 118, so the sum is 125 (01111101)."
+ },
+ {
+  "q": "Add in binary: <code>01000010</code> + <code>01010011</code> = ?",
+  "opts": [
+   "<code>10010101</code>",
+   "<code>00010001</code>",
+   "<code>01010011</code>",
+   "<code>10000101</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 66 + 83 = 149, and 149 in binary is 10010101."
+ },
+ {
+  "q": "What is the decimal value of <code>01110010</code> + <code>00110110</code>?",
+  "opts": [
+   "168",
+   "176",
+   "172",
+   "118"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "01110010 is 114 and 00110110 is 54, so the sum is 168 (10101000)."
+ },
+ {
+  "q": "Add in binary: <code>00010011</code> + <code>00111001</code> = ?",
+  "opts": [
+   "<code>01001100</code>",
+   "<code>00101010</code>",
+   "<code>00111011</code>",
+   "<code>01000100</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 19 + 57 = 76, and 76 in binary is 01001100."
+ },
+ {
+  "q": "What is the decimal value of <code>01100011</code> + <code>00100011</code>?",
+  "opts": [
+   "134",
+   "64",
+   "99",
+   "142"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "01100011 is 99 and 00100011 is 35, so the sum is 134 (10000110)."
+ },
+ {
+  "q": "Add in binary: <code>01110010</code> + <code>01110001</code> = ?",
+  "opts": [
+   "<code>11100011</code>",
+   "<code>00000011</code>",
+   "<code>01110011</code>",
+   "<code>11101011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 114 + 113 = 227, and 227 in binary is 11100011."
+ },
+ {
+  "q": "What is the decimal value of <code>00011001</code> + <code>01110010</code>?",
+  "opts": [
+   "139",
+   "107",
+   "138",
+   "123"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "00011001 is 25 and 01110010 is 114, so the sum is 139 (10001011)."
+ },
+ {
+  "q": "Add in binary: <code>00110011</code> + <code>00100100</code> = ?",
+  "opts": [
+   "<code>01010111</code>",
+   "<code>01011001</code>",
+   "<code>00010111</code>",
+   "<code>01010110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 51 + 36 = 87, and 87 in binary is 01010111."
+ },
+ {
+  "q": "What is the decimal value of <code>00011110</code> + <code>01111000</code>?",
+  "opts": [
+   "150",
+   "102",
+   "148",
+   "126"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "00011110 is 30 and 01111000 is 120, so the sum is 150 (10010110)."
+ },
+ {
+  "q": "Add in binary: <code>00110000</code> + <code>00010011</code> = ?",
+  "opts": [
+   "<code>01000011</code>",
+   "<code>01000001</code>",
+   "<code>00100011</code>",
+   "<code>01000101</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 48 + 19 = 67, and 67 in binary is 01000011."
+ },
+ {
+  "q": "What is the decimal value of <code>00111010</code> + <code>00100001</code>?",
+  "opts": [
+   "91",
+   "27",
+   "59",
+   "95"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "00111010 is 58 and 00100001 is 33, so the sum is 91 (01011011)."
+ },
+ {
+  "q": "Add in binary: <code>00011011</code> + <code>00101001</code> = ?",
+  "opts": [
+   "<code>01000100</code>",
+   "<code>01000000</code>",
+   "<code>01001000</code>",
+   "<code>00110010</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 27 + 41 = 68, and 68 in binary is 01000100."
+ },
+ {
+  "q": "What is the decimal value of <code>01110001</code> + <code>00111101</code>?",
+  "opts": [
+   "174",
+   "178",
+   "172",
+   "125"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "01110001 is 113 and 00111101 is 61, so the sum is 174 (10101110)."
+ },
+ {
+  "q": "Add in binary: <code>01010001</code> + <code>00011011</code> = ?",
+  "opts": [
+   "<code>01101100</code>",
+   "<code>01100100</code>",
+   "<code>01001010</code>",
+   "<code>01011011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 81 + 27 = 108, and 108 in binary is 01101100."
+ },
+ {
+  "q": "What is the decimal value of <code>01000101</code> + <code>01100100</code>?",
+  "opts": [
+   "169",
+   "33",
+   "185",
+   "101"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "01000101 is 69 and 01100100 is 100, so the sum is 169 (10101001)."
+ },
+ {
+  "q": "Add in binary: <code>00101111</code> + <code>00110111</code> = ?",
+  "opts": [
+   "<code>01100110</code>",
+   "<code>00011000</code>",
+   "<code>01100100</code>",
+   "<code>01101000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Check it in decimal: 47 + 55 = 102, and 102 in binary is 01100110."
+ },
+ {
+  "q": "What is the decimal value of <code>01001010</code> + <code>01110011</code>?",
+  "opts": [
+   "189",
+   "185",
+   "57",
+   "123"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "01001010 is 74 and 01110011 is 115, so the sum is 189 (10111101)."
+ },
+ {
+  "q": "In binary, what is 1 + 1?",
+  "opts": [
+   "<code>10</code>, write 0 and carry 1",
+   "<code>2</code>",
+   "<code>11</code>, write 1 and carry 1",
+   "<code>0</code>, with nothing carried"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Binary has no digit 2. One plus one is two, written 10: a 0 in this column and a 1 carried into the next."
+ },
+ {
+  "q": "In binary, what is 1 + 1 + 1 (two bits plus a carried 1)?",
+  "opts": [
+   "<code>11</code>, write 1 and carry 1",
+   "<code>10</code>, write 0 and carry 1",
+   "<code>3</code>",
+   "<code>111</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Three in binary is 11: write a 1 in this column and carry a 1 to the next."
+ },
+ {
+  "q": "What does it mean to <em>carry</em> a bit in binary addition?",
+  "opts": [
+   "A column total too large for one bit moves a 1 into the next placeholder to the left",
+   "A bit is taken from the host portion and given to the network portion",
+   "The right-most bit is dropped",
+   "Two numbers are converted to decimal"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Carrying works exactly like decimal addition: when a column overflows, the extra 1 moves one place to the left."
+ },
+ {
+  "q": "In subnetting, what does <em>borrowing bits</em> mean?",
+  "opts": [
+   "Taking bits from the host portion of an address and giving them to the network portion",
+   "Carrying a 1 into the next column during addition",
+   "Subtracting one binary number from another",
+   "Converting a bit from 1 to 0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrowing is a subnetting term, not an arithmetic one. You borrow host bits to make more, smaller networks."
+ },
+ {
+  "q": "What is <code>00000001</code> + <code>00000001</code>?",
+  "opts": [
+   "<code>00000010</code>",
+   "<code>00000011</code>",
+   "<code>00000002</code>",
+   "<code>00000000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "1 + 1 = 10 in the ones column: write 0, carry 1 into the 2 column. The result is 2."
+ },
+ {
+  "q": "Counting up by one, which binary value comes right after <code>00011111</code>?",
+  "opts": [
+   "<code>00100000</code>",
+   "<code>00011110</code>",
+   "<code>00111111</code>",
+   "<code>00010000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Adding 1 to five 1s carries all the way into the 32 placeholder: 31 + 1 = 32. In subnetting, that carry is exactly where one subnet ends and the next begins."
+ },
+ {
+  "q": "What is the fastest reliable way to check a binary addition answer?",
+  "opts": [
+   "Convert both numbers and the result to decimal and confirm the math",
+   "Count the number of 1s in each number",
+   "Make sure the result has more 1s than either number",
+   "Reverse the bits and add again"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The math is the same in any base. If the decimal check works, the binary answer is right."
+ },
+ {
+  "q": "Which binary addition rule is correct?",
+  "opts": [
+   "0 + 1 = 1",
+   "1 + 1 = 2",
+   "1 + 1 = 1",
+   "0 + 0 = 1"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The four rules are 0 + 0 = 0, 0 + 1 = 1, 1 + 0 = 1, and 1 + 1 = 10."
+ }
+]

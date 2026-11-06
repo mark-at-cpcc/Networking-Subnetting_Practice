@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 7 &mdash; IPv6 Addressing | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 2: Addressing &middot; Module 7</div>
+            <h1 class="module-title">IPv6 Addressing</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.8</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item"><a href="Module1_Binary-and-Decimal.html">Module 1 &mdash; Binary and Decimal Number Systems</a></div>
+            <div class="toc-item"><a href="Module2_Binary-Math.html">Module 2 &mdash; Binary Math</a></div>
+            <div class="toc-item"><a href="Module3_Hexadecimal-Part-I.html">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</a></div>
+            <div class="toc-item"><a href="Module4_Hexadecimal-Part-II.html">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</a></div>
+            <div class="toc-item"><a href="Module5_Classful-IPv4-Part-I.html">Module 5 &mdash; Classful IPv4 Addressing, Part I</a></div>
+            <div class="toc-item"><a href="Module6_Classful-IPv4-Part-II.html">Module 6 &mdash; Classful IPv4 Addressing, Part II</a></div>
+            <div class="toc-item current" id="tocCurrent">Module 7 &mdash; IPv6 Addressing</div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item"><a href="Module9_CIDR-Network-Calculations.html">Module 9 &mdash; CIDR: Subnetting for Networks</a></div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Describe</strong> the structure of a 128-bit IPv6 address and its prefix</li>
+                    <li><strong>Compress</strong> and expand IPv6 addresses correctly</li>
+                    <li><strong>Identify</strong> IPv6 address types by prefix, including global unicast, unique local, link-local, and multicast</li>
+                    <li><strong>Compare</strong> dual stack, tunneling, and NAT64 as IPv4/IPv6 coexistence methods</li>
+                </ol>
+            </div>
+            <h2>Why IPv6</h2>
+            <p>IPv4&rsquo;s 32 bits give about 4.3 billion addresses, and the world ran out. IPv6 uses 128 bits, enough for every device that will ever exist. The exam expects you to read IPv6 addresses, recognize their types, and know how IPv4 and IPv6 networks work together.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>An IPv6 address is 128 bits written as eight hextets in hexadecimal, separated by colons. A typical global unicast address uses a 48-bit global routing prefix, a 16-bit subnet ID, and a 64-bit interface ID. The prefix length (for example, /64) works exactly like CIDR in IPv4: it counts the network bits.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>IPv6 is the same idea as IPv4, just much longer and written in hex. The first half says which network; the second half says which device.</p></div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Global routing prefix</th><th>Subnet ID</th><th>Interface ID</th></tr></thead>
+                    <tbody>
+                        <tr><td>48 bits &mdash; assigned by the ISP</td><td>16 bits &mdash; up to 65,536 subnets per site</td><td>64 bits &mdash; identifies the device interface</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Compressing an IPv6 Address</h2>
+            <p>Two rules shorten an address without changing it. First, drop leading zeros in any hextet (<code>0db8</code> becomes <code>db8</code>). Second, replace one run of all-zero hextets with a double colon (<code>::</code>), and only once per address.</p>
+            <p>Compress <code>2001:0db8:0000:0042:0000:8a2e:0370:7334</code>.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <p>Drop leading zeros: <code>2001:db8:0:42:0:8a2e:370:7334</code>. There is no run of two or more zero hextets, and a double colon is used only to replace a run of zero hextets, so the address stays as written: <strong><code>2001:db8:0:42:0:8a2e:370:7334</code></strong>.</p>
+                </div>
+            </div>
+            <p>Now compress <code>2001:0db8:0000:0000:0000:0000:0000:0001</code>.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <p>Drop leading zeros, then replace the six zero hextets with <code>::</code>: <strong><code>2001:db8::1</code></strong>.</p>
+                </div>
+            </div>
+            <div class="cpcc-order" data-title="Put the IPv6 compression steps in order" data-perfect="That is the compression method.">
+                <script type="application/json" class="cpcc-order-bank">["Write out all eight hextets", "Remove leading zeros from each hextet", "Find the longest run of all-zero hextets", "Replace that one run with ::", "Check that :: appears only once"]</script>
+            </div>
+            <h2>IPv6 Address Types</h2>
+            <p>IPv6 uses unicast, multicast, and anycast. There is <strong>no broadcast</strong>; the jobs IPv4 does with broadcast are done with multicast.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Type</th><th>Prefix</th><th>IPv4 comparison</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td>Global unicast (GUA)</td><td>2000::/3</td><td>Public address</td><td>Globally routable; assigned to LAN hosts as well as WAN links</td></tr>
+                        <tr><td>Unique local (ULA)</td><td>FC00::/7 (FD00::/8 in practice)</td><td>RFC 1918 private</td><td>Not routed on the internet</td></tr>
+                        <tr><td>Link-local</td><td>FE80::/10</td><td>APIPA (169.254/16)</td><td>Every IPv6 interface creates one automatically; never routed off the link</td></tr>
+                        <tr><td>Multicast</td><td>FF00::/8</td><td>Class D multicast</td><td>Replaces broadcast</td></tr>
+                        <tr><td>Loopback</td><td>::1</td><td>127.0.0.1</td><td>The device itself</td></tr>
+                        <tr><td>Anycast</td><td>From the unicast range</td><td>&mdash;</td><td>Same address on several devices; traffic goes to the nearest one</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Multicast address</th><th>Who receives it</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>ff02::1</code></td><td>All nodes on the link</td></tr>
+                        <tr><td><code>ff02::2</code></td><td>All routers on the link</td></tr>
+                        <tr><td><code>ff02::5</code> and <code>ff02::6</code></td><td>OSPFv3 routers</td></tr>
+                        <tr><td><code>ff02::9</code></td><td>RIPng routers</td></tr>
+                        <tr><td><code>ff02::a</code></td><td>EIGRP routers</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="key-concept">
+                <h4>Link-Local Is Always There</h4>
+                <p>The moment IPv6 is enabled on an interface, it creates a link-local address in FE80::/10, either from its MAC address (EUI-64, common on Cisco gear) or from a random interface ID (common on Windows, macOS, and Linux). Neighbors and routers on the same link use these addresses to find each other.</p>
+            </div>
+            <h2>Getting IPv4 and IPv6 to Work Together</h2>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Method</th><th>How it works</th><th>When you see it</th></tr></thead>
+                    <tbody>
+                        <tr><td>Dual stack</td><td>Every device runs IPv4 and IPv6 at the same time</td><td>The most common approach in modern networks</td></tr>
+                        <tr><td>Tunneling</td><td>IPv6 packets are carried inside IPv4 packets</td><td>Crossing an IPv4-only part of the network</td></tr>
+                        <tr><td>NAT64</td><td>A gateway translates between IPv6 and IPv4</td><td>IPv6-only clients reaching IPv4-only servers</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout callout-info">
+                <div class="callout-title">Legacy Tunneling Methods</div>
+                <div class="callout-content"><p>You may see older tunneling methods in documentation: 6to4 (deprecated in 2015), Teredo, and ISATAP. All three are considered legacy and are disabled by default in current versions of Windows.</p></div>
+            </div>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>On a dual-stack network, a firewall rule written only for IPv4 does nothing for IPv6 traffic. When you secure a network, check both protocols: an open IPv6 path is just as open as an IPv4 one.</p></div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>Using :: twice. <code>2001::1::5</code> is invalid because no one can tell how many zero hextets each :: replaces.</p></div>
+            </div>
+            <h2>Module 7 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 29-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Pay closest attention to anything you marked Confident and still missed. That is a belief you would not think to re-check, and it is exactly what costs points on exam day.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-7.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 7 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>IPv6 addresses are 128 bits: eight hextets, usually split into a /64 network and a 64-bit interface ID.</li>
+                    <li>Compress by dropping leading zeros and replacing one run of zero hextets with ::.</li>
+                    <li>Address types: global unicast 2000::/3, unique local FC00::/7, link-local FE80::/10, multicast FF00::/8, loopback ::1.</li>
+                    <li>IPv6 has no broadcast; multicast does that work.</li>
+                    <li>Dual stack, tunneling, and NAT64 let IPv4 and IPv6 coexist.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://professormesser.link/n009videos" target="_blank" rel="noopener">Professor Messer&rsquo;s free N10-009 course index</a>: watch <em>IPv6 Addressing</em> (1.8)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>

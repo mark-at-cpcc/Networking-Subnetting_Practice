@@ -1,0 +1,446 @@
+[
+ {
+  "q": "What is the decimal value of the binary number <code>10100101</code>?",
+  "opts": [
+   "165",
+   "161",
+   "37",
+   "173"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 32 + 4 + 1 = 165."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>00011101</code>?",
+  "opts": [
+   "29",
+   "13",
+   "21",
+   "184"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 16 + 8 + 4 + 1 = 29."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>10001101</code>?",
+  "opts": [
+   "141",
+   "133",
+   "137",
+   "140"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 8 + 4 + 1 = 141."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>01010010</code>?",
+  "opts": [
+   "82",
+   "74",
+   "80",
+   "210"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 64 + 16 + 2 = 82."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>11010110</code>?",
+  "opts": [
+   "214",
+   "107",
+   "210",
+   "212"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 64 + 16 + 4 + 2 = 214."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>01001110</code>?",
+  "opts": [
+   "78",
+   "70",
+   "76",
+   "14"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 64 + 8 + 4 + 2 = 78."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>01111111</code>?",
+  "opts": [
+   "127",
+   "126",
+   "123",
+   "125"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 64 + 32 + 16 + 8 + 4 + 2 + 1 = 127."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>10110111</code>?",
+  "opts": [
+   "183",
+   "237",
+   "179",
+   "55"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 32 + 16 + 4 + 2 + 1 = 183."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>11011001</code>?",
+  "opts": [
+   "217",
+   "155",
+   "209",
+   "216"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 64 + 16 + 8 + 1 = 217."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>01111000</code>?",
+  "opts": [
+   "120",
+   "112",
+   "56",
+   "121"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 64 + 32 + 16 + 8 = 120."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>10011001</code>?",
+  "opts": [
+   "153",
+   "152",
+   "217",
+   "155"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 16 + 8 + 1 = 153."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>11000101</code>?",
+  "opts": [
+   "197",
+   "193",
+   "163",
+   "196"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 64 + 4 + 1 = 197."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>11100010</code>?",
+  "opts": [
+   "226",
+   "224",
+   "227",
+   "230"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 128 + 64 + 32 + 2 = 226."
+ },
+ {
+  "q": "What is the decimal value of the binary number <code>01011000</code>?",
+  "opts": [
+   "88",
+   "90",
+   "80",
+   "24"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Add the placeholder values under every 1 bit: 64 + 16 + 8 = 88."
+ },
+ {
+  "q": "How is the decimal number <strong>184</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>10111000</code>",
+   "<code>10110000</code>",
+   "<code>10011000</code>",
+   "<code>00011101</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 32 + 16 + 8 = 184, which gives 10111000."
+ },
+ {
+  "q": "How is the decimal number <strong>51</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>00110011</code>",
+   "<code>10110011</code>",
+   "<code>00100011</code>",
+   "<code>11001100</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 32 + 16 + 2 + 1 = 51, which gives 00110011."
+ },
+ {
+  "q": "How is the decimal number <strong>231</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>11100111</code>",
+   "<code>11100110</code>",
+   "<code>11100011</code>",
+   "<code>11000111</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 64 + 32 + 4 + 2 + 1 = 231, which gives 11100111."
+ },
+ {
+  "q": "How is the decimal number <strong>30</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>00011110</code>",
+   "<code>00011111</code>",
+   "<code>00001110</code>",
+   "<code>01111000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 16 + 8 + 4 + 2 = 30, which gives 00011110."
+ },
+ {
+  "q": "How is the decimal number <strong>145</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>10010001</code>",
+   "<code>10001001</code>",
+   "<code>11010001</code>",
+   "<code>10010000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 16 + 1 = 145, which gives 10010001."
+ },
+ {
+  "q": "How is the decimal number <strong>207</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>11001111</code>",
+   "<code>01001111</code>",
+   "<code>11101111</code>",
+   "<code>11110011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 64 + 8 + 4 + 2 + 1 = 207, which gives 11001111."
+ },
+ {
+  "q": "How is the decimal number <strong>54</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>00110110</code>",
+   "<code>00111110</code>",
+   "<code>10110110</code>",
+   "<code>01101100</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 32 + 16 + 4 + 2 = 54, which gives 00110110."
+ },
+ {
+  "q": "How is the decimal number <strong>236</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>11101100</code>",
+   "<code>11101000</code>",
+   "<code>01101100</code>",
+   "<code>00110111</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 64 + 32 + 8 + 4 = 236, which gives 11101100."
+ },
+ {
+  "q": "How is the decimal number <strong>95</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>01011111</code>",
+   "<code>01001111</code>",
+   "<code>00011111</code>",
+   "<code>11111010</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 64 + 16 + 8 + 4 + 2 + 1 = 95, which gives 01011111."
+ },
+ {
+  "q": "How is the decimal number <strong>149</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>10010101</code>",
+   "<code>10010111</code>",
+   "<code>10011101</code>",
+   "<code>10010100</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 16 + 4 + 1 = 149, which gives 10010101."
+ },
+ {
+  "q": "How is the decimal number <strong>80</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>01010000</code>",
+   "<code>01110000</code>",
+   "<code>00001010</code>",
+   "<code>01010001</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 64 + 16 = 80, which gives 01010000."
+ },
+ {
+  "q": "How is the decimal number <strong>73</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>01001001</code>",
+   "<code>01001011</code>",
+   "<code>01001000</code>",
+   "<code>10010010</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 64 + 8 + 1 = 73, which gives 01001001."
+ },
+ {
+  "q": "How is the decimal number <strong>143</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>10001111</code>",
+   "<code>10001011</code>",
+   "<code>10001101</code>",
+   "<code>10001110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 8 + 4 + 2 + 1 = 143, which gives 10001111."
+ },
+ {
+  "q": "How is the decimal number <strong>176</strong> written in 8-bit binary?",
+  "opts": [
+   "<code>10110000</code>",
+   "<code>10110100</code>",
+   "<code>10110001</code>",
+   "<code>10111000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Subtract placeholders from left to right: 128 + 32 + 16 = 176, which gives 10110000."
+ },
+ {
+  "q": "What is the value of the left-most bit (the most significant bit) in an 8-bit binary number?",
+  "opts": [
+   "128",
+   "256",
+   "1",
+   "255"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The eight placeholders are 128, 64, 32, 16, 8, 4, 2, and 1. The left-most one is 2 to the 7th power, which is 128."
+ },
+ {
+  "q": "What is the largest decimal value that fits in one 8-bit octet?",
+  "opts": [
+   "255",
+   "256",
+   "128",
+   "254"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "All eight bits on is 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255. There are 256 possible values because 0 counts too."
+ },
+ {
+  "q": "How many different values can one 8-bit octet represent?",
+  "opts": [
+   "256",
+   "255",
+   "128",
+   "8"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Each bit doubles the count: 2 to the 8th power is 256 values, from 0 through 255."
+ },
+ {
+  "q": "Which placeholder is the least significant bit in an 8-bit binary number?",
+  "opts": [
+   "The right-most bit, worth 1",
+   "The left-most bit, worth 128",
+   "The middle bit, worth 16",
+   "Whichever bit is set to 1 first"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Binary is read the same way as decimal: the right-most place is worth the least. It is 2 to the 0 power, which is 1."
+ },
+ {
+  "q": "Why is 2 to the 0 power equal to 1?",
+  "opts": [
+   "Any nonzero number raised to the power of zero equals 1",
+   "Zero times two is one",
+   "The right-most bit is always on",
+   "Binary has no zero"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "By definition, any nonzero number raised to the power of zero is 1. That is why the right-most place is the ones place in every number system."
+ },
+ {
+  "q": "Why do network technicians write the decimal value 5 as <code>00000101</code> instead of <code>101</code>?",
+  "opts": [
+   "Each octet of an IP address or mask is exactly 8 bits, so the placeholders must line up",
+   "Leading zeros make the value larger",
+   "Routers cannot read numbers shorter than 8 digits typed by people",
+   "It is a different number from 101"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The value is the same, but subnetting depends on lining up bits by position. Writing all 8 bits keeps every placeholder in its column."
+ },
+ {
+  "q": "In the decimal number 4,096, what is the place value of the digit 4?",
+  "opts": [
+   "4,000 (4 &times; 10 to the 3rd power)",
+   "400",
+   "40",
+   "4"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Counting from the right, the 4 sits in the thousands place, 10 to the 3rd power, so it is worth 4 &times; 1,000."
+ },
+ {
+  "q": "Which subnet mask octet is written as <code>11111100</code> in binary?",
+  "opts": [
+   "252",
+   "248",
+   "254",
+   "240"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "128 + 64 + 32 + 16 + 8 + 4 = 252. You will see 255.255.255.252 again in the subnetting modules."
+ },
+ {
+  "q": "Which subnet mask octet is written as <code>11000000</code> in binary?",
+  "opts": [
+   "192",
+   "128",
+   "224",
+   "160"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "128 + 64 = 192."
+ }
+]

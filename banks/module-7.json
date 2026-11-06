@@ -1,0 +1,347 @@
+[
+ {
+  "q": "What is the shortest valid way to write <code>2001:0db8:0000:0000:0000:0000:0000:0001</code>?",
+  "opts": [
+   "<code>2001:db8::1</code>",
+   "<code>2001:db8:0:0:0:0:0:1</code>",
+   "<code>2001:db8:0:1</code>",
+   "<code>2001:db8:::1</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): 2001:db8::1."
+ },
+ {
+  "q": "What is the shortest valid way to write <code>2001:0db8:0000:0042:0000:8a2e:0370:7334</code>?",
+  "opts": [
+   "<code>2001:db8:0:42:0:8a2e:370:7334</code>",
+   "<code>2001:db8:0:42:0:8a2e:370:7334:</code>",
+   "<code>2001:db8:0:42:0:8a2e:370:7334::</code>",
+   "<code>2001:0db8:0000:0042:0000:8a2e:0370:7334</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): 2001:db8:0:42:0:8a2e:370:7334."
+ },
+ {
+  "q": "What is the shortest valid way to write <code>fe80:0000:0000:0000:0204:61ff:fe9d:f156</code>?",
+  "opts": [
+   "<code>fe80::204:61ff:fe9d:f156</code>",
+   "<code>fe80:0:0:0:204:61ff:fe9d:f156</code>",
+   "<code>fe80:0:204:61ff:fe9d:f156</code>",
+   "<code>fe80:::204:61ff:fe9d:f156</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): fe80::204:61ff:fe9d:f156."
+ },
+ {
+  "q": "What is the shortest valid way to write <code>2001:0db8:85a3:0000:0000:0000:0000:0010</code>?",
+  "opts": [
+   "<code>2001:db8:85a3::10</code>",
+   "<code>2001:db8:85a3:0:0:0:0:10</code>",
+   "<code>2001:db8:85a3:0:10</code>",
+   "<code>2001:db8:85a3:::10</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): 2001:db8:85a3::10."
+ },
+ {
+  "q": "What is the shortest valid way to write <code>fd00:0000:0000:0001:0000:0000:0000:00a1</code>?",
+  "opts": [
+   "<code>fd00:0:0:1::a1</code>",
+   "<code>fd00:0:0:1:0:0:0:a1</code>",
+   "<code>fd00:0:0:1:0:a1</code>",
+   "<code>fd00:0:0:1:::a1</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): fd00:0:0:1::a1."
+ },
+ {
+  "q": "What is the shortest valid way to write <code>2001:0db8:0000:0000:0001:0000:0000:0001</code>?",
+  "opts": [
+   "<code>2001:db8::1:0:0:1</code>",
+   "<code>2001:db8:0:0:1:0:0:1</code>",
+   "<code>2001:db8:0:1:0:0:1</code>",
+   "<code>2001:db8:::1:0:0:1</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): 2001:db8::1:0:0:1."
+ },
+ {
+  "q": "What is the shortest valid way to write <code>ff02:0000:0000:0000:0000:0000:0000:0002</code>?",
+  "opts": [
+   "<code>ff02::2</code>",
+   "<code>ff02:0:0:0:0:0:0:2</code>",
+   "<code>ff02:0:2</code>",
+   "<code>ff02:::2</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): ff02::2."
+ },
+ {
+  "q": "What is the shortest valid way to write <code>2600:1f18:0000:0000:0000:0000:0000:0abc</code>?",
+  "opts": [
+   "<code>2600:1f18::abc</code>",
+   "<code>2600:1f18:0:0:0:0:0:abc</code>",
+   "<code>2600:1f18:0:abc</code>",
+   "<code>2600:1f18:::abc</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Drop leading zeros in each hextet, then replace the longest run of all-zero hextets with :: (only once): 2600:1f18::abc."
+ },
+ {
+  "q": "What is the fully expanded form of <code>2001:db8::1</code>?",
+  "opts": [
+   "<code>2001:0db8:0000:0000:0000:0000:0000:0001</code>",
+   "<code>2001:0db8:000:0000:0000:0000:0000:0001</code>",
+   "<code>2001:0db8:0000:0000:0000:0000:0000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Restore each hextet to four digits and expand :: into as many 0000 hextets as it takes to reach eight: 2001:0db8:0000:0000:0000:0000:0000:0001."
+ },
+ {
+  "q": "What is the fully expanded form of <code>fe80::1</code>?",
+  "opts": [
+   "<code>fe80:0000:0000:0000:0000:0000:0000:0001</code>",
+   "<code>fe80:000:0000:0000:0000:0000:0000:0001</code>",
+   "<code>fe80:0000:0000:0000:0000:0000:0000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Restore each hextet to four digits and expand :: into as many 0000 hextets as it takes to reach eight: fe80:0000:0000:0000:0000:0000:0000:0001."
+ },
+ {
+  "q": "What is the fully expanded form of <code>2001:db8:a::25</code>?",
+  "opts": [
+   "<code>2001:0db8:000a:0000:0000:0000:0000:0025</code>",
+   "<code>2001:0db8:000a:000:0000:0000:0000:0025</code>",
+   "<code>2001:0db8:000a:0000:0000:0000:0000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Restore each hextet to four digits and expand :: into as many 0000 hextets as it takes to reach eight: 2001:0db8:000a:0000:0000:0000:0000:0025."
+ },
+ {
+  "q": "What is the fully expanded form of <code>ff02::1:ff00:1</code>?",
+  "opts": [
+   "<code>ff02:0000:0000:0000:0000:0001:ff00:0001</code>",
+   "<code>ff02:000:0000:0000:0000:0001:ff00:0001</code>",
+   "<code>ff02:0000:0000:0000:0000:0000:0000:0001</code>",
+   "<code>ff02:0000:0000:0000:0000:0001:ff00</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Restore each hextet to four digits and expand :: into as many 0000 hextets as it takes to reach eight: ff02:0000:0000:0000:0000:0001:ff00:0001."
+ },
+ {
+  "q": "What type of IPv6 address is <code>fe80::21a:2bff:fe3c:4d5e</code>?",
+  "opts": [
+   "Link-local unicast",
+   "Loopback",
+   "Unique local unicast",
+   "Multicast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Addresses in FE80::/10 are link-local."
+ },
+ {
+  "q": "What type of IPv6 address is <code>2600:1f18:4a2::17</code>?",
+  "opts": [
+   "Global unicast",
+   "Unique local unicast",
+   "Link-local unicast",
+   "Multicast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Addresses in 2000::/3 (first hextet 2000&ndash;3FFF) are global unicast."
+ },
+ {
+  "q": "What type of IPv6 address is <code>fd12:3456:789a:1::1</code>?",
+  "opts": [
+   "Unique local unicast",
+   "Loopback",
+   "Link-local unicast",
+   "Global unicast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Addresses in FC00::/7 (in practice FD00::/8) are unique local."
+ },
+ {
+  "q": "What type of IPv6 address is <code>ff02::2</code>?",
+  "opts": [
+   "Multicast",
+   "Link-local unicast",
+   "Unique local unicast",
+   "Global unicast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Every address in FF00::/8 is multicast."
+ },
+ {
+  "q": "What type of IPv6 address is <code>::1</code>?",
+  "opts": [
+   "Loopback",
+   "Multicast",
+   "Global unicast",
+   "Link-local unicast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "::1 is the IPv6 loopback address."
+ },
+ {
+  "q": "What type of IPv6 address is <code>2a03:2880:f10c::25</code>?",
+  "opts": [
+   "Global unicast",
+   "Link-local unicast",
+   "Unique local unicast",
+   "Loopback"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Addresses in 2000::/3 (first hextet 2000&ndash;3FFF) are global unicast."
+ },
+ {
+  "q": "What type of IPv6 address is <code>fe80::1</code>?",
+  "opts": [
+   "Link-local unicast",
+   "Global unicast",
+   "Unique local unicast",
+   "Loopback"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Addresses in FE80::/10 are link-local."
+ },
+ {
+  "q": "What type of IPv6 address is <code>ff05::1:3</code>?",
+  "opts": [
+   "Multicast",
+   "Unique local unicast",
+   "Link-local unicast",
+   "Global unicast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Every address in FF00::/8 is multicast."
+ },
+ {
+  "q": "Which IPv6 multicast address reaches all nodes on the local link?",
+  "opts": [
+   "<code>ff02::1</code>",
+   "<code>ff02::2</code>",
+   "<code>ff02::5</code>",
+   "<code>ff01::1</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "ff02::1 is all nodes on the link; ff02::2 is all routers."
+ },
+ {
+  "q": "Which IPv6 multicast address reaches all routers on the local link?",
+  "opts": [
+   "<code>ff02::2</code>",
+   "<code>ff02::1</code>",
+   "<code>ff02::9</code>",
+   "<code>ff05::2</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "ff02::2 is all routers on the link."
+ },
+ {
+  "q": "Which transmission type does IPv6 not use?",
+  "opts": [
+   "Broadcast",
+   "Multicast",
+   "Unicast",
+   "Anycast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "IPv6 has no broadcast. Jobs that IPv4 does with broadcast are done with multicast."
+ },
+ {
+  "q": "A network runs IPv4 and IPv6 on every interface at the same time. What transition method is that?",
+  "opts": [
+   "Dual stack",
+   "Tunneling",
+   "NAT64",
+   "Anycast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Dual stack runs both protocols side by side on each device."
+ },
+ {
+  "q": "Which transition method lets IPv6-only clients reach IPv4-only servers by translating between the two protocols?",
+  "opts": [
+   "NAT64",
+   "Dual stack",
+   "Tunneling",
+   "Link-local addressing"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "NAT64 translates IPv6 packets to IPv4 and back."
+ },
+ {
+  "q": "Which transition method carries IPv6 packets inside IPv4 packets across an IPv4 network?",
+  "opts": [
+   "Tunneling",
+   "NAT64",
+   "Dual stack",
+   "Multicast"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Tunneling encapsulates IPv6 in IPv4 so it can cross IPv4-only infrastructure."
+ },
+ {
+  "q": "How many times can the double colon (::) appear in one IPv6 address?",
+  "opts": [
+   "Once",
+   "Twice",
+   "Once per zero hextet",
+   "As many times as needed"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Using :: twice would make it impossible to tell how many zeros each one replaces."
+ },
+ {
+  "q": "How many bits is the interface ID in a typical IPv6 global unicast address?",
+  "opts": [
+   "64",
+   "48",
+   "16",
+   "128"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "The usual split is a 48-bit global routing prefix, a 16-bit subnet ID, and a 64-bit interface ID."
+ },
+ {
+  "q": "What problem was IPv6 primarily designed to solve?",
+  "opts": [
+   "IPv4 address exhaustion",
+   "Slow DNS lookups",
+   "Broadcast storms only",
+   "Cable length limits"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "IPv4&rsquo;s 32-bit space runs out; IPv6&rsquo;s 128 bits provide a practically unlimited supply."
+ }
+]

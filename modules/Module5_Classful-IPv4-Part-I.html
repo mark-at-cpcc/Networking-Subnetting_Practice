@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 5 &mdash; Classful IPv4 Addressing, Part I | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 2: Addressing &middot; Module 5</div>
+            <h1 class="module-title">Classful IPv4 Addressing, Part I</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.7</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item"><a href="Module1_Binary-and-Decimal.html">Module 1 &mdash; Binary and Decimal Number Systems</a></div>
+            <div class="toc-item"><a href="Module2_Binary-Math.html">Module 2 &mdash; Binary Math</a></div>
+            <div class="toc-item"><a href="Module3_Hexadecimal-Part-I.html">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</a></div>
+            <div class="toc-item"><a href="Module4_Hexadecimal-Part-II.html">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</a></div>
+            <div class="toc-item current" id="tocCurrent">Module 5 &mdash; Classful IPv4 Addressing, Part I</div>
+            <div class="toc-item"><a href="Module6_Classful-IPv4-Part-II.html">Module 6 &mdash; Classful IPv4 Addressing, Part II</a></div>
+            <div class="toc-item"><a href="Module7_IPv6-Addressing.html">Module 7 &mdash; IPv6 Addressing</a></div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item"><a href="Module9_CIDR-Network-Calculations.html">Module 9 &mdash; CIDR: Subnetting for Networks</a></div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Distinguish</strong> the roles of MAC (layer 2) and IP (layer 3) addresses</li>
+                    <li><strong>Identify</strong> the class of any IPv4 address and its default subnet mask</li>
+                    <li><strong>Classify</strong> addresses as RFC 1918 private, public, APIPA, or loopback</li>
+                    <li><strong>Explain</strong> how a subnet mask separates the network portion from the host portion</li>
+                </ol>
+            </div>
+            <h2>Two Addresses, Two Jobs</h2>
+            <p>Every device on a network carries two kinds of address. The <strong>MAC address</strong> (layer 2) gets a frame across the local network. The <strong>IP address</strong> (layer 3) gets a packet from one network to another. Subnetting is about the IP address, but you need to know where each one does its work.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>A switch learns the source MAC address of each incoming frame and the port it arrived on, then forwards frames by destination MAC; unknown destinations are flooded out every port except the one the frame arrived on. A router removes the layer 2 frame, reads the layer 3 packet, chooses the next hop by IP address, and builds a new frame for the next network.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>The MAC address is like the name on an apartment door: it only matters inside the building. The IP address is the street address: it is what gets mail from one city to another.</p></div>
+            </div>
+            <h2>IPv4 Address Structure</h2>
+            <p>An IPv4 address is 32 bits, written as four 8-bit octets in dotted decimal. A <strong>subnet mask</strong> is another 32-bit number that marks which bits are network and which are host: 1s for network, 0s for host. You need both to know where a device lives.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th></th><th>Dotted decimal</th><th>Binary</th></tr></thead>
+                    <tbody>
+                        <tr><td>Address</td><td>192.168.1.1</td><td><code>11000000.10101000.00000001.00000001</code></td></tr>
+                        <tr><td>Mask</td><td>255.255.255.0</td><td><code>11111111.11111111.11111111.00000000</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="key-concept">
+                <h4>The Mask Draws the Line</h4>
+                <p>Under every 1 in the mask, the address bit belongs to the network; under every 0, it belongs to the host. With 255.255.255.0, every host on this network starts with 192.168.1, and only the last octet changes.</p>
+            </div>
+            <h2>IPv4 Address Classes</h2>
+            <p>IPv4 was originally divided into five classes based on the leading bits of the first octet. Modern networks are classless (CIDR), but the exam still expects you to identify the class and its default mask.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Class</th><th>First octet</th><th>Leading bits</th><th>Default mask</th><th>Use</th></tr></thead>
+                    <tbody>
+                        <tr><td>A</td><td>1&ndash;126</td><td><code>0</code></td><td>255.0.0.0 (/8)</td><td>Large networks</td></tr>
+                        <tr><td>B</td><td>128&ndash;191</td><td><code>10</code></td><td>255.255.0.0 (/16)</td><td>Medium networks</td></tr>
+                        <tr><td>C</td><td>192&ndash;223</td><td><code>110</code></td><td>255.255.255.0 (/24)</td><td>Small networks</td></tr>
+                        <tr><td>D</td><td>224&ndash;239</td><td><code>1110</code></td><td>None</td><td>Multicast</td></tr>
+                        <tr><td>E</td><td>240&ndash;255</td><td><code>1111</code></td><td>None</td><td>Experimental</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout callout-info">
+                <div class="callout-title">Why 127 Is Missing</div>
+                <div class="callout-content"><p>127.0.0.0/8 is reserved for <strong>loopback</strong>. 127.0.0.1 (localhost) always means &ldquo;this device,&rdquo; and it is used to test a computer&rsquo;s own network stack.</p></div>
+            </div>
+            <h2>Public, Private, and Special Addresses</h2>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Range</th><th>Name</th><th>What it tells you</th></tr></thead>
+                    <tbody>
+                        <tr><td>10.0.0.0/8</td><td>RFC 1918 private (Class A)</td><td>Internal use; not routed on the internet</td></tr>
+                        <tr><td>172.16.0.0/12 (172.16&ndash;172.31)</td><td>RFC 1918 private (Class B)</td><td>Internal use; not routed on the internet</td></tr>
+                        <tr><td>192.168.0.0/16</td><td>RFC 1918 private (Class C)</td><td>Internal use; not routed on the internet</td></tr>
+                        <tr><td>169.254.0.0/16</td><td>APIPA (IPv4 link-local)</td><td>The host could not reach a DHCP server</td></tr>
+                        <tr><td>127.0.0.0/8</td><td>Loopback</td><td>The device itself</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>A user says, &ldquo;My computer has an address, but nothing works.&rdquo; You run <code>ipconfig</code> and see 169.254.33.7. That APIPA address is your first clue: the computer never heard back from DHCP, so check the cable, the switch port, and the DHCP server before anything else.</p></div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>The Class B private range is 172.16.0.0 through 172.<strong>31</strong>.255.255, not just 172.16.x.x. Addresses like 172.20.5.1 are private; 172.32.5.1 is public.</p></div>
+            </div>
+            <h2>Subnet Mask Rules</h2>
+            <p>A valid subnet mask is always a contiguous run of 1s starting from the left, followed by a contiguous run of 0s. You can assign hosts only within the host portion (the 0s). All 1s (255.255.255.255, /32) identifies a single host, and all 0s (0.0.0.0, /0) appears in default routes, not host networks.</p>
+            <div class="cpcc-order" data-title="Put these leading-bit patterns in class order, A to E" data-perfect="Each class adds one more leading 1.">
+                <script type="application/json" class="cpcc-order-bank">["<code>0</code>", "<code>10</code>", "<code>110</code>", "<code>1110</code>", "<code>1111</code>"]</script>
+            </div>
+            <h2>Module 5 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 29-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Pay closest attention to anything you marked Confident and still missed. That is a belief you would not think to re-check, and it is exactly what costs points on exam day.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-5.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 5 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>MAC addresses (layer 2) deliver frames locally; IP addresses (layer 3) cross networks.</li>
+                    <li>An IPv4 address and its mask are both 32 bits; 1s in the mask mark network bits.</li>
+                    <li>Classes A, B, and C have default masks of /8, /16, and /24; D is multicast and E is experimental.</li>
+                    <li>RFC 1918 private ranges: 10/8, 172.16/12, and 192.168/16. APIPA is 169.254/16; loopback is 127/8.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://professormesser.link/n009videos" target="_blank" rel="noopener">Professor Messer&rsquo;s free N10-009 course index</a>: watch <em>IPv4 Addressing</em> and <em>Classful Subnetting</em> (1.7)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>

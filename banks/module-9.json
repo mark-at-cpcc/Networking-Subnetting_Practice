@@ -1,0 +1,361 @@
+[
+ {
+  "q": "Given the network <code>10.0.0.0/16</code>, what subnet mask creates at least 221 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.0 (/24)",
+   "255.255.254.0 (/23)",
+   "255.255.255.128 (/25)",
+   "255.255.255.192 (/26)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 221: 8 bits gives 256 subnets. /16 + 8 = /24, or 255.255.255.0."
+ },
+ {
+  "q": "Given the network <code>192.32.1.0/24</code>, what subnet mask creates at least 12 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.240 (/28)",
+   "255.255.255.224 (/27)",
+   "255.255.255.248 (/29)",
+   "255.255.255.252 (/30)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 12: 4 bits gives 16 subnets. /24 + 4 = /28, or 255.255.255.240."
+ },
+ {
+  "q": "Given the network <code>172.32.0.0/16</code>, what subnet mask creates at least 419 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.128 (/25)",
+   "255.255.255.0 (/24)",
+   "255.255.255.192 (/26)",
+   "255.255.255.224 (/27)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 419: 9 bits gives 512 subnets. /16 + 9 = /25, or 255.255.255.128."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask creates at least 502 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.128.0 (/17)",
+   "255.255.0.0 (/16)",
+   "255.255.192.0 (/18)",
+   "255.255.224.0 (/19)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 502: 9 bits gives 512 subnets. /8 + 9 = /17, or 255.255.128.0."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask creates at least 437 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.128.0 (/17)",
+   "255.255.0.0 (/16)",
+   "255.255.192.0 (/18)",
+   "255.255.224.0 (/19)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 437: 9 bits gives 512 subnets. /8 + 9 = /17, or 255.255.128.0."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask creates at least 49 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.252.0.0 (/14)",
+   "255.248.0.0 (/13)",
+   "255.254.0.0 (/15)",
+   "255.255.0.0 (/16)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 49: 6 bits gives 64 subnets. /8 + 6 = /14, or 255.252.0.0."
+ },
+ {
+  "q": "Given the network <code>192.168.1.0/24</code>, what subnet mask creates at least 6 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.224 (/27)",
+   "255.255.255.192 (/26)",
+   "255.255.255.240 (/28)",
+   "255.255.255.248 (/29)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 6: 3 bits gives 8 subnets. /24 + 3 = /27, or 255.255.255.224."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask creates at least 378 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.128.0 (/17)",
+   "255.255.0.0 (/16)",
+   "255.255.192.0 (/18)",
+   "255.255.224.0 (/19)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 378: 9 bits gives 512 subnets. /8 + 9 = /17, or 255.255.128.0."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/16</code>, what subnet mask creates at least 137 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.0 (/24)",
+   "255.255.254.0 (/23)",
+   "255.255.255.128 (/25)",
+   "255.255.255.192 (/26)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 137: 8 bits gives 256 subnets. /16 + 8 = /24, or 255.255.255.0."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/16</code>, what subnet mask creates at least 199 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.0 (/24)",
+   "255.255.254.0 (/23)",
+   "255.255.255.128 (/25)",
+   "255.255.255.192 (/26)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 199: 8 bits gives 256 subnets. /16 + 8 = /24, or 255.255.255.0."
+ },
+ {
+  "q": "Given the network <code>192.32.1.0/24</code>, what subnet mask creates at least 47 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.252 (/30)",
+   "255.255.255.248 (/29)",
+   "255.255.255.192 (/26)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 47: 6 bits gives 64 subnets. /24 + 6 = /30, or 255.255.255.252."
+ },
+ {
+  "q": "Given the network <code>172.16.0.0/16</code>, what subnet mask creates at least 493 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.255.128 (/25)",
+   "255.255.255.0 (/24)",
+   "255.255.255.192 (/26)",
+   "255.255.255.224 (/27)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 493: 9 bits gives 512 subnets. /16 + 9 = /25, or 255.255.255.128."
+ },
+ {
+  "q": "Given the network <code>172.32.0.0/16</code>, what subnet mask creates at least 20 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.248.0 (/21)",
+   "255.255.240.0 (/20)",
+   "255.255.252.0 (/22)",
+   "255.255.254.0 (/23)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 20: 5 bits gives 32 subnets. /16 + 5 = /21, or 255.255.248.0."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask creates at least 210 subnets while leaving the most hosts per subnet?",
+  "opts": [
+   "255.255.0.0 (/16)",
+   "255.254.0.0 (/15)",
+   "255.255.128.0 (/17)",
+   "255.255.192.0 (/18)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Borrow host bits until 2<sup>bits</sup> &ge; 210: 8 bits gives 256 subnets. /8 + 8 = /16, or 255.255.0.0."
+ },
+ {
+  "q": "How many subnets are created when a /24 network is subnetted with a /27 mask?",
+  "opts": [
+   "8",
+   "16",
+   "4",
+   "3"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "3 bits were borrowed (/24 to /27), and 2<sup>3</sup> = 8."
+ },
+ {
+  "q": "How many subnets are created when a /24 network is subnetted with a /30 mask?",
+  "opts": [
+   "64",
+   "128",
+   "32",
+   "6"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "6 bits were borrowed (/24 to /30), and 2<sup>6</sup> = 64."
+ },
+ {
+  "q": "How many subnets are created when a /16 network is subnetted with a /24 mask?",
+  "opts": [
+   "256",
+   "512",
+   "128",
+   "8"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "8 bits were borrowed (/16 to /24), and 2<sup>8</sup> = 256."
+ },
+ {
+  "q": "How many subnets are created when a /16 network is subnetted with a /20 mask?",
+  "opts": [
+   "16",
+   "32",
+   "8",
+   "4"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "4 bits were borrowed (/16 to /20), and 2<sup>4</sup> = 16."
+ },
+ {
+  "q": "How many subnets are created when a /8 network is subnetted with a /16 mask?",
+  "opts": [
+   "256",
+   "512",
+   "128",
+   "8"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "8 bits were borrowed (/8 to /16), and 2<sup>8</sup> = 256."
+ },
+ {
+  "q": "How many subnets are created when a /16 network is subnetted with a /26 mask?",
+  "opts": [
+   "1024",
+   "2048",
+   "512",
+   "10"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "10 bits were borrowed (/16 to /26), and 2<sup>10</sup> = 1024."
+ },
+ {
+  "q": "How many subnets are created when a /24 network is subnetted with a /28 mask?",
+  "opts": [
+   "16",
+   "32",
+   "8",
+   "4"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "4 bits were borrowed (/24 to /28), and 2<sup>4</sup> = 16."
+ },
+ {
+  "q": "How many subnets are created when a /8 network is subnetted with a /12 mask?",
+  "opts": [
+   "16",
+   "32",
+   "8",
+   "4"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "4 bits were borrowed (/8 to /12), and 2<sup>4</sup> = 16."
+ },
+ {
+  "q": "A host is configured as <code>195.16.12.129/27</code>. What is the network address of its subnet?",
+  "opts": [
+   "195.16.12.128",
+   "195.16.12.160",
+   "195.16.12.129",
+   "195.16.12.159"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /27 is 32. The multiple of the block size at or below the host gives 195.16.12.128; the broadcast is 195.16.12.159."
+ },
+ {
+  "q": "A host is configured as <code>172.32.4.154/26</code>. What is the network address of its subnet?",
+  "opts": [
+   "172.32.4.128",
+   "172.32.4.192",
+   "172.32.4.154",
+   "172.32.4.191"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /26 is 64. The multiple of the block size at or below the host gives 172.32.4.128; the broadcast is 172.32.4.191."
+ },
+ {
+  "q": "A host is configured as <code>151.16.32.100/28</code>. What is the network address of its subnet?",
+  "opts": [
+   "151.16.32.96",
+   "151.16.32.112",
+   "151.16.32.100",
+   "151.16.32.111"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /28 is 16. The multiple of the block size at or below the host gives 151.16.32.96; the broadcast is 151.16.32.111."
+ },
+ {
+  "q": "A host is configured as <code>192.168.64.13/30</code>. What is the network address of its subnet?",
+  "opts": [
+   "192.168.64.12",
+   "192.168.64.16",
+   "192.168.64.13",
+   "192.168.64.15"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /30 is 4. The multiple of the block size at or below the host gives 192.168.64.12; the broadcast is 192.168.64.15."
+ },
+ {
+  "q": "A host is configured as <code>10.4.77.200/21</code>. What is the network address of its subnet?",
+  "opts": [
+   "10.4.72.0",
+   "10.4.80.0",
+   "10.4.77.200",
+   "10.4.79.255"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /21 is 2048. The multiple of the block size at or below the host gives 10.4.72.0; the broadcast is 10.4.79.255."
+ },
+ {
+  "q": "A host is configured as <code>192.168.1.200/26</code>. What is the network address of its subnet?",
+  "opts": [
+   "192.168.1.192",
+   "192.168.2.0",
+   "192.168.1.200",
+   "192.168.1.255"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /26 is 64. The multiple of the block size at or below the host gives 192.168.1.192; the broadcast is 192.168.1.255."
+ },
+ {
+  "q": "A host is configured as <code>172.16.9.9/22</code>. What is the network address of its subnet?",
+  "opts": [
+   "172.16.8.0",
+   "172.16.12.0",
+   "172.16.9.9",
+   "172.16.11.255"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /22 is 1024. The multiple of the block size at or below the host gives 172.16.8.0; the broadcast is 172.16.11.255."
+ },
+ {
+  "q": "A host is configured as <code>203.0.113.77/29</code>. What is the network address of its subnet?",
+  "opts": [
+   "203.0.113.72",
+   "203.0.113.80",
+   "203.0.113.77",
+   "203.0.113.79"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The block size for /29 is 8. The multiple of the block size at or below the host gives 203.0.113.72; the broadcast is 203.0.113.79."
+ }
+]

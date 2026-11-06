@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 3 &mdash; Hexadecimal, Part I: MAC Addresses | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 1: Number Systems &middot; Module 3</div>
+            <h1 class="module-title">Hexadecimal, Part I: MAC Addresses</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.7, 1.8</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item"><a href="Module1_Binary-and-Decimal.html">Module 1 &mdash; Binary and Decimal Number Systems</a></div>
+            <div class="toc-item"><a href="Module2_Binary-Math.html">Module 2 &mdash; Binary Math</a></div>
+            <div class="toc-item current" id="tocCurrent">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</div>
+            <div class="toc-item"><a href="Module4_Hexadecimal-Part-II.html">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</a></div>
+            <div class="toc-item"><a href="Module5_Classful-IPv4-Part-I.html">Module 5 &mdash; Classful IPv4 Addressing, Part I</a></div>
+            <div class="toc-item"><a href="Module6_Classful-IPv4-Part-II.html">Module 6 &mdash; Classful IPv4 Addressing, Part II</a></div>
+            <div class="toc-item"><a href="Module7_IPv6-Addressing.html">Module 7 &mdash; IPv6 Addressing</a></div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item"><a href="Module9_CIDR-Network-Calculations.html">Module 9 &mdash; CIDR: Subnetting for Networks</a></div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Identify</strong> the decimal and binary value of every hex digit, 0 through F</li>
+                    <li><strong>Convert</strong> two-digit hex values to binary and back by substitution</li>
+                    <li><strong>Describe</strong> the structure of a 48-bit MAC address, including the OUI</li>
+                    <li><strong>Distinguish</strong> a hex value from a decimal value written with the same digits</li>
+                </ol>
+            </div>
+            <h2>Why Hexadecimal</h2>
+            <p>Long binary numbers are hard for people to read and easy to copy wrong. Hexadecimal (base 16), or <strong>hex</strong>, is shorthand for binary: every hex digit stands for exactly four bits. You will see hex in two places on the exam and on the job: MAC addresses, which you meet in this module, and IPv6 addresses, which you meet in Module 4.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>Hexadecimal uses sixteen characters, 0&ndash;9 and A&ndash;F, to represent the values 0 through 15. Because 2<sup>4</sup> = 16, each hex digit maps to one 4-bit group (a <strong>nibble</strong>), and two hex digits represent one byte. Conversion between hex and binary is a direct substitution, one digit at a time.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Think of hex as a code where each character replaces four bits. You never have to do long math: look up each character, write its four bits, and move to the next character.</p></div>
+            </div>
+            <h2>The Hex Character Map</h2>
+            <p>Learn this table well enough that you can write it from memory. The numbers 0&ndash;9 match decimal, and the letters A&ndash;F continue counting from 10 to 15. Letters can be written in uppercase or lowercase; they mean the same value.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Hex</th><th>Decimal</th><th>Binary</th></tr></thead>
+                    <tbody>
+                        <tr><td>0</td><td>0</td><td><code>0000</code></td></tr>
+                        <tr><td>1</td><td>1</td><td><code>0001</code></td></tr>
+                        <tr><td>2</td><td>2</td><td><code>0010</code></td></tr>
+                        <tr><td>3</td><td>3</td><td><code>0011</code></td></tr>
+                        <tr><td>4</td><td>4</td><td><code>0100</code></td></tr>
+                        <tr><td>5</td><td>5</td><td><code>0101</code></td></tr>
+                        <tr><td>6</td><td>6</td><td><code>0110</code></td></tr>
+                        <tr><td>7</td><td>7</td><td><code>0111</code></td></tr>
+                        <tr><td>8</td><td>8</td><td><code>1000</code></td></tr>
+                        <tr><td>9</td><td>9</td><td><code>1001</code></td></tr>
+                        <tr><td>A</td><td>10</td><td><code>1010</code></td></tr>
+                        <tr><td>B</td><td>11</td><td><code>1011</code></td></tr>
+                        <tr><td>C</td><td>12</td><td><code>1100</code></td></tr>
+                        <tr><td>D</td><td>13</td><td><code>1101</code></td></tr>
+                        <tr><td>E</td><td>14</td><td><code>1110</code></td></tr>
+                        <tr><td>F</td><td>15</td><td><code>1111</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="key-concept">
+                <h4>One Hex Digit = Four Bits</h4>
+                <p>Every hex digit uses the four placeholders 8, 4, 2, 1. C is 12, which is 8 + 4, so C = <code>1100</code>. Two hex digits side by side are just two 4-bit groups side by side: <code>A1</code> = <code>1010 0001</code>.</p>
+            </div>
+            <h3>Worked Example: Hex to Binary</h3>
+            <p>Convert <code>2F</code> to binary. Work each digit separately, then open the solution.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <p>F is 15, and 15 = 8 + 4 + 2 + 1:</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Placeholder</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+                    <tbody>
+                        <tr><td>Bit</td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>1</strong></td></tr>
+                        <tr><td>Bit &times; Placeholder</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>2 is 2:</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Placeholder</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+                    <tbody>
+                        <tr><td>Bit</td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>1</strong></td><td><strong>0</strong></td></tr>
+                        <tr><td>Bit &times; Placeholder</td><td>0</td><td>0</td><td>2</td><td>0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>Put the groups together in the same order as the digits: <code>2F</code> = <strong><code>0010 1111</code></strong> (decimal 47).</p>
+                </div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>The hex value 12 and the decimal value 12 are not the same thing. Hex <code>12</code> is <code>0001 0010</code> (decimal 18); decimal 12 is hex <code>C</code>. When a problem gives you a number, decide first which system it is written in.</p></div>
+            </div>
+            <h2>MAC Address Format</h2>
+            <div class="definition">
+                <div class="definition-term">MAC address</div>
+                <p class="definition-text">A 48-bit physical (layer 2) address assigned to a network interface. The first 24 bits are the Organizationally Unique Identifier (OUI) of the manufacturer; the last 24 bits identify the individual interface.</p>
+            </div>
+            <p>The 48 bits are written as 12 hex digits, grouped into 6 pairs and separated by colons or hyphens. Here is how one address breaks down:</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Pair</th><th>Binary</th><th>Hex</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td><code>0000 0000</code></td><td><code>00</code></td></tr>
+                        <tr><td>2</td><td><code>0101 0000</code></td><td><code>50</code></td></tr>
+                        <tr><td>3</td><td><code>0101 0110</code></td><td><code>56</code></td></tr>
+                        <tr><td>4</td><td><code>1100 0000</code></td><td><code>C0</code></td></tr>
+                        <tr><td>5</td><td><code>0000 0000</code></td><td><code>00</code></td></tr>
+                        <tr><td>6</td><td><code>0000 1000</code></td><td><code>08</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Written out: <code>00:50:56:C0:00:08</code>. The first three pairs, <code>00:50:56</code>, are the OUI.</p>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>When a switch&rsquo;s MAC address table shows an unknown device on a port, the OUI tells you who made it. Typing the first three pairs into an OUI lookup tool can tell you in seconds whether the device is a printer, a phone, or a virtual machine.</p></div>
+            </div>
+            <div class="cpcc-order" data-title="Put the hex-to-binary steps in order" data-perfect="That is the substitution method.">
+                <script type="application/json" class="cpcc-order-bank">["Read the first hex digit", "Find its decimal value (0&ndash;15)", "Write that value as 4 bits using 8, 4, 2, 1", "Repeat for each remaining hex digit", "Write the 4-bit groups side by side in the same order"]</script>
+            </div>
+            <h2>Practice Problems</h2>
+            <h3>Hex to Binary</h3>
+            <p>Convert each to binary: <code>F2</code>, <code>11</code>, <code>A0</code>, <code>05</code>, <code>1A</code>.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Hex</th><th>Binary</th><th>Decimal</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>F2</code></td><td><code>1111 0010</code></td><td>242</td></tr>
+                        <tr><td><code>11</code></td><td><code>0001 0001</code></td><td>17</td></tr>
+                        <tr><td><code>A0</code></td><td><code>1010 0000</code></td><td>160</td></tr>
+                        <tr><td><code>05</code></td><td><code>0000 0101</code></td><td>5</td></tr>
+                        <tr><td><code>1A</code></td><td><code>0001 1010</code></td><td>26</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h3>Number Systems Conversion</h3>
+            <p>Fill in the missing two columns for each value. Write binary as 8 digits.</p>
+            <p><strong>Decimal values:</strong> 16, 27, 19, 21, 28, 92, 58, 75, 10, 79, 5, 61, 30, 80, 99, 54, 33<br><strong>Binary values:</strong> <code>1011 0110</code>, <code>1000 1010</code>, <code>1100 0110</code>, <code>1000 0110</code>, <code>1111 0010</code>, <code>1000 1000</code>, <code>0100 0101</code>, <code>1100 0100</code>, <code>1100 0011</code>, <code>1010 0110</code>, <code>1100 1110</code>, <code>1100 1010</code>, <code>1100 1101</code>, <code>1110 0001</code>, <code>1011 1010</code><br><strong>Hex values:</strong> <code>A1</code>, <code>12</code>, <code>20</code>, <code>FF</code>, <code>23</code>, <code>4C</code>, <code>B1</code>, <code>4A</code>, <code>AD</code>, <code>49</code>, <code>6F</code>, <code>FE</code>, <code>1A</code>, <code>18</code></p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Decimal</th><th>Binary</th><th>Hex</th></tr></thead>
+                    <tbody>
+                        <tr><td>16</td><td><code>0001 0000</code></td><td><code>10</code></td></tr>
+                        <tr><td>27</td><td><code>0001 1011</code></td><td><code>1B</code></td></tr>
+                        <tr><td>19</td><td><code>0001 0011</code></td><td><code>13</code></td></tr>
+                        <tr><td>21</td><td><code>0001 0101</code></td><td><code>15</code></td></tr>
+                        <tr><td>28</td><td><code>0001 1100</code></td><td><code>1C</code></td></tr>
+                        <tr><td>92</td><td><code>0101 1100</code></td><td><code>5C</code></td></tr>
+                        <tr><td>58</td><td><code>0011 1010</code></td><td><code>3A</code></td></tr>
+                        <tr><td>75</td><td><code>0100 1011</code></td><td><code>4B</code></td></tr>
+                        <tr><td>10</td><td><code>0000 1010</code></td><td><code>0A</code></td></tr>
+                        <tr><td>79</td><td><code>0100 1111</code></td><td><code>4F</code></td></tr>
+                        <tr><td>5</td><td><code>0000 0101</code></td><td><code>05</code></td></tr>
+                        <tr><td>61</td><td><code>0011 1101</code></td><td><code>3D</code></td></tr>
+                        <tr><td>30</td><td><code>0001 1110</code></td><td><code>1E</code></td></tr>
+                        <tr><td>80</td><td><code>0101 0000</code></td><td><code>50</code></td></tr>
+                        <tr><td>99</td><td><code>0110 0011</code></td><td><code>63</code></td></tr>
+                        <tr><td>54</td><td><code>0011 0110</code></td><td><code>36</code></td></tr>
+                        <tr><td>33</td><td><code>0010 0001</code></td><td><code>21</code></td></tr>
+                        <tr><td>182</td><td><code>1011 0110</code></td><td><code>B6</code></td></tr>
+                        <tr><td>138</td><td><code>1000 1010</code></td><td><code>8A</code></td></tr>
+                        <tr><td>198</td><td><code>1100 0110</code></td><td><code>C6</code></td></tr>
+                        <tr><td>134</td><td><code>1000 0110</code></td><td><code>86</code></td></tr>
+                        <tr><td>242</td><td><code>1111 0010</code></td><td><code>F2</code></td></tr>
+                        <tr><td>136</td><td><code>1000 1000</code></td><td><code>88</code></td></tr>
+                        <tr><td>69</td><td><code>0100 0101</code></td><td><code>45</code></td></tr>
+                        <tr><td>196</td><td><code>1100 0100</code></td><td><code>C4</code></td></tr>
+                        <tr><td>195</td><td><code>1100 0011</code></td><td><code>C3</code></td></tr>
+                        <tr><td>166</td><td><code>1010 0110</code></td><td><code>A6</code></td></tr>
+                        <tr><td>206</td><td><code>1100 1110</code></td><td><code>CE</code></td></tr>
+                        <tr><td>202</td><td><code>1100 1010</code></td><td><code>CA</code></td></tr>
+                        <tr><td>205</td><td><code>1100 1101</code></td><td><code>CD</code></td></tr>
+                        <tr><td>225</td><td><code>1110 0001</code></td><td><code>E1</code></td></tr>
+                        <tr><td>186</td><td><code>1011 1010</code></td><td><code>BA</code></td></tr>
+                        <tr><td>161</td><td><code>1010 0001</code></td><td><code>A1</code></td></tr>
+                        <tr><td>18</td><td><code>0001 0010</code></td><td><code>12</code></td></tr>
+                        <tr><td>32</td><td><code>0010 0000</code></td><td><code>20</code></td></tr>
+                        <tr><td>255</td><td><code>1111 1111</code></td><td><code>FF</code></td></tr>
+                        <tr><td>35</td><td><code>0010 0011</code></td><td><code>23</code></td></tr>
+                        <tr><td>76</td><td><code>0100 1100</code></td><td><code>4C</code></td></tr>
+                        <tr><td>177</td><td><code>1011 0001</code></td><td><code>B1</code></td></tr>
+                        <tr><td>74</td><td><code>0100 1010</code></td><td><code>4A</code></td></tr>
+                        <tr><td>173</td><td><code>1010 1101</code></td><td><code>AD</code></td></tr>
+                        <tr><td>73</td><td><code>0100 1001</code></td><td><code>49</code></td></tr>
+                        <tr><td>111</td><td><code>0110 1111</code></td><td><code>6F</code></td></tr>
+                        <tr><td>254</td><td><code>1111 1110</code></td><td><code>FE</code></td></tr>
+                        <tr><td>26</td><td><code>0001 1010</code></td><td><code>1A</code></td></tr>
+                        <tr><td>24</td><td><code>0001 1000</code></td><td><code>18</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h2>Module 3 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 33-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Pay closest attention to anything you marked Confident and still missed. That is a belief you would not think to re-check, and it is exactly what costs points on exam day.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-3.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 3 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>Hexadecimal uses 0&ndash;9 and A&ndash;F for the values 0&ndash;15.</li>
+                    <li>Each hex digit is exactly 4 bits, so conversion is digit-by-digit substitution.</li>
+                    <li>A MAC address is 48 bits, written as 12 hex digits in 6 pairs.</li>
+                    <li>The first 24 bits of a MAC address are the manufacturer&rsquo;s OUI.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://professormesser.link/n009videos" target="_blank" rel="noopener">Professor Messer&rsquo;s free N10-009 course index</a>: watch <em>Binary Math</em> (1.7) and <em>IPv6 Addressing</em> (1.8)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>

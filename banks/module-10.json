@@ -1,0 +1,314 @@
+[
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 2 hosts?",
+  "opts": [
+   "/30 (4 addresses)",
+   "/31 (2 addresses)",
+   "/29 (8 addresses)",
+   "/28 (16 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "2 + 2 = 4 addresses; the smallest power of 2 that fits is 4, which is /30."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 6 hosts?",
+  "opts": [
+   "/29 (8 addresses)",
+   "/30 (4 addresses)",
+   "/28 (16 addresses)",
+   "/27 (32 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "6 + 2 = 8 addresses; the smallest power of 2 that fits is 8, which is /29."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 10 hosts?",
+  "opts": [
+   "/28 (16 addresses)",
+   "/29 (8 addresses)",
+   "/27 (32 addresses)",
+   "/26 (64 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "10 + 2 = 12 addresses; the smallest power of 2 that fits is 16, which is /28."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 14 hosts?",
+  "opts": [
+   "/28 (16 addresses)",
+   "/29 (8 addresses)",
+   "/27 (32 addresses)",
+   "/26 (64 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "14 + 2 = 16 addresses; the smallest power of 2 that fits is 16, which is /28."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 20 hosts?",
+  "opts": [
+   "/27 (32 addresses)",
+   "/28 (16 addresses)",
+   "/26 (64 addresses)",
+   "/25 (128 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "20 + 2 = 22 addresses; the smallest power of 2 that fits is 32, which is /27."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 30 hosts?",
+  "opts": [
+   "/27 (32 addresses)",
+   "/28 (16 addresses)",
+   "/26 (64 addresses)",
+   "/25 (128 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "30 + 2 = 32 addresses; the smallest power of 2 that fits is 32, which is /27."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 45 hosts?",
+  "opts": [
+   "/26 (64 addresses)",
+   "/27 (32 addresses)",
+   "/25 (128 addresses)",
+   "/24 (256 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "45 + 2 = 47 addresses; the smallest power of 2 that fits is 64, which is /26."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 60 hosts?",
+  "opts": [
+   "/26 (64 addresses)",
+   "/27 (32 addresses)",
+   "/25 (128 addresses)",
+   "/24 (256 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "60 + 2 = 62 addresses; the smallest power of 2 that fits is 64, which is /26."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 100 hosts?",
+  "opts": [
+   "/25 (128 addresses)",
+   "/26 (64 addresses)",
+   "/24 (256 addresses)",
+   "/23 (512 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "100 + 2 = 102 addresses; the smallest power of 2 that fits is 128, which is /25."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 130 hosts?",
+  "opts": [
+   "/24 (256 addresses)",
+   "/25 (128 addresses)",
+   "/23 (512 addresses)",
+   "/22 (1024 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "130 + 2 = 132 addresses; the smallest power of 2 that fits is 256, which is /24."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 250 hosts?",
+  "opts": [
+   "/24 (256 addresses)",
+   "/25 (128 addresses)",
+   "/23 (512 addresses)",
+   "/22 (1024 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "250 + 2 = 252 addresses; the smallest power of 2 that fits is 256, which is /24."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 500 hosts?",
+  "opts": [
+   "/23 (512 addresses)",
+   "/24 (256 addresses)",
+   "/22 (1024 addresses)",
+   "/21 (2048 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "500 + 2 = 502 addresses; the smallest power of 2 that fits is 512, which is /23."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 1000 hosts?",
+  "opts": [
+   "/22 (1024 addresses)",
+   "/23 (512 addresses)",
+   "/21 (2048 addresses)",
+   "/20 (4096 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "1000 + 2 = 1002 addresses; the smallest power of 2 that fits is 1024, which is /22."
+ },
+ {
+  "q": "In a VLSM design, what is the smallest subnet that supports 2000 hosts?",
+  "opts": [
+   "/21 (2048 addresses)",
+   "/22 (1024 addresses)",
+   "/20 (4096 addresses)",
+   "/19 (8192 addresses)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "2000 + 2 = 2002 addresses; the smallest power of 2 that fits is 2048, which is /21."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>192.168.1.0/27</code>. What is the next available network address?",
+  "opts": [
+   "192.168.1.32",
+   "192.168.1.31",
+   "192.168.1.33",
+   "192.168.1.16"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 192.168.1.31: 192.168.1.32."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>192.168.1.32/28</code>. What is the next available network address?",
+  "opts": [
+   "192.168.1.48",
+   "192.168.1.47",
+   "192.168.1.49",
+   "192.168.1.40"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 192.168.1.47: 192.168.1.48."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>172.16.0.0/24</code>. What is the next available network address?",
+  "opts": [
+   "172.16.1.0",
+   "172.16.0.255",
+   "172.16.1.1",
+   "172.16.0.128"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 172.16.0.255: 172.16.1.0."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>172.16.1.0/25</code>. What is the next available network address?",
+  "opts": [
+   "172.16.1.128",
+   "172.16.1.127",
+   "172.16.1.129",
+   "172.16.1.64"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 172.16.1.127: 172.16.1.128."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>172.16.1.128/27</code>. What is the next available network address?",
+  "opts": [
+   "172.16.1.160",
+   "172.16.1.159",
+   "172.16.1.161",
+   "172.16.1.144"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 172.16.1.159: 172.16.1.160."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>160.192.0.0/19</code>. What is the next available network address?",
+  "opts": [
+   "160.192.32.0",
+   "160.192.31.255",
+   "160.192.32.1",
+   "160.192.16.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 160.192.31.255: 160.192.32.0."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>160.192.32.0/22</code>. What is the next available network address?",
+  "opts": [
+   "160.192.36.0",
+   "160.192.35.255",
+   "160.192.36.1",
+   "160.192.34.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 160.192.35.255: 160.192.36.0."
+ },
+ {
+  "q": "In a VLSM plan, the last network allocated was <code>160.192.36.0/23</code>. What is the next available network address?",
+  "opts": [
+   "160.192.38.0",
+   "160.192.37.255",
+   "160.192.38.1",
+   "160.192.37.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The next network starts one address after the broadcast address 160.192.37.255: 160.192.38.0."
+ },
+ {
+  "q": "What is the first step when building a VLSM addressing plan?",
+  "opts": [
+   "Sort the networks from the most hosts to the fewest",
+   "Assign the smallest network first",
+   "Use the same mask for every network",
+   "Start at the broadcast address"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Allocating the largest networks first keeps every block aligned on its boundary and avoids overlaps."
+ },
+ {
+  "q": "What is the main benefit of VLSM?",
+  "opts": [
+   "It conserves addresses by sizing each subnet to its need",
+   "It removes the need for a subnet mask",
+   "It makes every subnet the same size",
+   "It eliminates broadcast addresses"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Variable-length masks let a 2-host link use a /30 while a 100-host LAN uses a /25, instead of wasting a large block on every network."
+ },
+ {
+  "q": "Which prefix is the usual choice for a point-to-point link between two routers?",
+  "opts": [
+   "/30",
+   "/24",
+   "/28",
+   "/32"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "A /30 has 4 addresses: network, two usable hosts, and broadcast &mdash; exactly enough for two router interfaces."
+ },
+ {
+  "q": "A plan needs networks of 14, 100, and 30 hosts. In what order should they be allocated?",
+  "opts": [
+   "100, then 30, then 14",
+   "14, then 30, then 100",
+   "30, then 100, then 14",
+   "Any order works"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Always allocate largest to smallest."
+ }
+]

@@ -1,0 +1,362 @@
+[
+ {
+  "q": "What is the CIDR prefix length of the mask 255.192.0.0?",
+  "opts": [
+   "/10",
+   "/11",
+   "/9",
+   "/12"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.192.0.0 is 11111111.11000000.00000000.00000000 in binary. Counting the 1 bits gives 10."
+ },
+ {
+  "q": "What is the CIDR prefix length of the mask 255.255.240.0?",
+  "opts": [
+   "/20",
+   "/21",
+   "/19",
+   "/22"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.255.240.0 is 11111111.11111111.11110000.00000000 in binary. Counting the 1 bits gives 20."
+ },
+ {
+  "q": "What is the CIDR prefix length of the mask 255.255.255.252?",
+  "opts": [
+   "/30",
+   "/31",
+   "/29",
+   "/28"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.255.255.252 is 11111111.11111111.11111111.11111100 in binary. Counting the 1 bits gives 30."
+ },
+ {
+  "q": "What is the CIDR prefix length of the mask 255.255.252.0?",
+  "opts": [
+   "/22",
+   "/23",
+   "/21",
+   "/24"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.255.252.0 is 11111111.11111111.11111100.00000000 in binary. Counting the 1 bits gives 22."
+ },
+ {
+  "q": "What is the CIDR prefix length of the mask 255.248.0.0?",
+  "opts": [
+   "/13",
+   "/14",
+   "/12",
+   "/15"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.248.0.0 is 11111111.11111000.00000000.00000000 in binary. Counting the 1 bits gives 13."
+ },
+ {
+  "q": "What is the CIDR prefix length of the mask 255.255.254.0?",
+  "opts": [
+   "/23",
+   "/24",
+   "/22",
+   "/25"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.255.254.0 is 11111111.11111111.11111110.00000000 in binary. Counting the 1 bits gives 23."
+ },
+ {
+  "q": "What is the CIDR prefix length of the mask 255.255.255.0?",
+  "opts": [
+   "/24",
+   "/25",
+   "/23",
+   "/26"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.255.255.0 is 11111111.11111111.11111111.00000000 in binary. Counting the 1 bits gives 24."
+ },
+ {
+  "q": "What is the CIDR prefix length of the mask 255.252.0.0?",
+  "opts": [
+   "/14",
+   "/15",
+   "/13",
+   "/16"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "255.252.0.0 is 11111111.11111100.00000000.00000000 in binary. Counting the 1 bits gives 14."
+ },
+ {
+  "q": "Which subnet mask matches the prefix /30?",
+  "opts": [
+   "255.255.255.252",
+   "255.255.255.240",
+   "255.255.255.248",
+   "255.255.255.254"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/30 means 30 1 bits from the left: 11111111.11111111.11111111.11111100, which is 255.255.255.252."
+ },
+ {
+  "q": "Which subnet mask matches the prefix /14?",
+  "opts": [
+   "255.252.0.0",
+   "255.248.0.0",
+   "255.254.0.0",
+   "255.255.0.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/14 means 14 1 bits from the left: 11111111.11111100.00000000.00000000, which is 255.252.0.0."
+ },
+ {
+  "q": "Which subnet mask matches the prefix /29?",
+  "opts": [
+   "255.255.255.248",
+   "255.255.255.240",
+   "255.255.255.252",
+   "255.255.255.254"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/29 means 29 1 bits from the left: 11111111.11111111.11111111.11111000, which is 255.255.255.248."
+ },
+ {
+  "q": "Which subnet mask matches the prefix /18?",
+  "opts": [
+   "255.255.192.0",
+   "255.255.128.0",
+   "255.255.224.0",
+   "255.255.240.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/18 means 18 1 bits from the left: 11111111.11111111.11000000.00000000, which is 255.255.192.0."
+ },
+ {
+  "q": "Which subnet mask matches the prefix /9?",
+  "opts": [
+   "255.128.0.0",
+   "255.0.0.0",
+   "255.192.0.0",
+   "255.224.0.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/9 means 9 1 bits from the left: 11111111.10000000.00000000.00000000, which is 255.128.0.0."
+ },
+ {
+  "q": "Which subnet mask matches the prefix /19?",
+  "opts": [
+   "255.255.224.0",
+   "255.255.192.0",
+   "255.255.240.0",
+   "255.255.248.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/19 means 19 1 bits from the left: 11111111.11111111.11100000.00000000, which is 255.255.224.0."
+ },
+ {
+  "q": "What is the network address of the host <code>116.191.68.178/8</code>?",
+  "opts": [
+   "116.0.0.0",
+   "116.191.0.0",
+   "116.191.68.0",
+   "116.191.68.178"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "With /8, the first 8 bits are the network. Keep those octets and set the host octets to 0: 116.0.0.0."
+ },
+ {
+  "q": "What is the network address of the host <code>97.134.169.245/16</code>?",
+  "opts": [
+   "97.134.0.0",
+   "97.0.0.0",
+   "97.134.169.0",
+   "97.134.169.245"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "With /16, the first 16 bits are the network. Keep those octets and set the host octets to 0: 97.134.0.0."
+ },
+ {
+  "q": "What is the network address of the host <code>35.224.162.94/24</code>?",
+  "opts": [
+   "35.224.162.0",
+   "35.0.0.0",
+   "35.224.0.0",
+   "35.224.162.94"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "With /24, the first 24 bits are the network. Keep those octets and set the host octets to 0: 35.224.162.0."
+ },
+ {
+  "q": "What is the network address of the host <code>201.84.183.62/24</code>?",
+  "opts": [
+   "201.84.183.0",
+   "201.0.0.0",
+   "201.84.0.0",
+   "201.84.183.62"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "With /24, the first 24 bits are the network. Keep those octets and set the host octets to 0: 201.84.183.0."
+ },
+ {
+  "q": "What is the network address of the host <code>110.191.218.47/16</code>?",
+  "opts": [
+   "110.191.0.0",
+   "110.0.0.0",
+   "110.191.218.0",
+   "110.191.218.47"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "With /16, the first 16 bits are the network. Keep those octets and set the host octets to 0: 110.191.0.0."
+ },
+ {
+  "q": "What is the network address of the host <code>34.66.148.94/8</code>?",
+  "opts": [
+   "34.0.0.0",
+   "34.66.0.0",
+   "34.66.148.0",
+   "34.66.148.94"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "With /8, the first 8 bits are the network. Keep those octets and set the host octets to 0: 34.0.0.0."
+ },
+ {
+  "q": "What is the broadcast address of the network that contains <code>117.69.146.225/24</code>?",
+  "opts": [
+   "117.69.146.255",
+   "117.255.255.255",
+   "117.69.255.255",
+   "117.69.146.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Set every host bit to 1. With /24, that makes the host octets 255: 117.69.146.255."
+ },
+ {
+  "q": "What is the broadcast address of the network that contains <code>148.214.215.14/16</code>?",
+  "opts": [
+   "148.214.255.255",
+   "148.255.255.255",
+   "148.214.215.255",
+   "148.214.0.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Set every host bit to 1. With /16, that makes the host octets 255: 148.214.255.255."
+ },
+ {
+  "q": "What is the broadcast address of the network that contains <code>203.105.165.139/8</code>?",
+  "opts": [
+   "203.255.255.255",
+   "203.105.255.255",
+   "203.105.165.255",
+   "203.0.0.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Set every host bit to 1. With /8, that makes the host octets 255: 203.255.255.255."
+ },
+ {
+  "q": "What is the broadcast address of the network that contains <code>28.192.193.55/24</code>?",
+  "opts": [
+   "28.192.193.255",
+   "28.255.255.255",
+   "28.192.255.255",
+   "28.192.193.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Set every host bit to 1. With /24, that makes the host octets 255: 28.192.193.255."
+ },
+ {
+  "q": "What is the broadcast address of the network that contains <code>137.194.53.182/16</code>?",
+  "opts": [
+   "137.194.255.255",
+   "137.255.255.255",
+   "137.194.53.255",
+   "137.194.0.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Set every host bit to 1. With /16, that makes the host octets 255: 137.194.255.255."
+ },
+ {
+  "q": "In the network 192.168.1.0/24, what is the last usable host address?",
+  "opts": [
+   "192.168.1.254",
+   "192.168.1.255",
+   "192.168.1.1",
+   "192.168.1.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": ".0 is the network address and .255 is the broadcast address, so the last usable host is .254."
+ },
+ {
+  "q": "Which transmission type delivers one packet to every host on the local subnet?",
+  "opts": [
+   "Broadcast",
+   "Unicast",
+   "Multicast",
+   "Anycast"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Broadcast is one-to-all within a subnet. ARP and DHCP discovery rely on it in IPv4."
+ },
+ {
+  "q": "OSPF routers exchange updates using 224.0.0.5. What transmission type is that?",
+  "opts": [
+   "Multicast",
+   "Broadcast",
+   "Unicast",
+   "Anycast"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "224.0.0.0&ndash;239.255.255.255 is the Class D multicast range: one sender, a group of interested receivers."
+ },
+ {
+  "q": "A workstation downloads a file from one web server. Which transmission type is that?",
+  "opts": [
+   "Unicast",
+   "Broadcast",
+   "Multicast",
+   "Anycast"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Unicast is one-to-one, the ordinary conversation between two hosts."
+ },
+ {
+  "q": "Why can the first address in a subnet not be assigned to a host?",
+  "opts": [
+   "It is the network address, which identifies the subnet itself",
+   "It is reserved for the default gateway",
+   "It is the broadcast address",
+   "It is reserved for DHCP"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "All host bits set to 0 names the network. All host bits set to 1 is the broadcast. Neither can be a host."
+ }
+]

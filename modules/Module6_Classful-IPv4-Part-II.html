@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 6 &mdash; Classful IPv4 Addressing, Part II | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 2: Addressing &middot; Module 6</div>
+            <h1 class="module-title">Classful IPv4 Addressing, Part II</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.7</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item"><a href="Module1_Binary-and-Decimal.html">Module 1 &mdash; Binary and Decimal Number Systems</a></div>
+            <div class="toc-item"><a href="Module2_Binary-Math.html">Module 2 &mdash; Binary Math</a></div>
+            <div class="toc-item"><a href="Module3_Hexadecimal-Part-I.html">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</a></div>
+            <div class="toc-item"><a href="Module4_Hexadecimal-Part-II.html">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</a></div>
+            <div class="toc-item"><a href="Module5_Classful-IPv4-Part-I.html">Module 5 &mdash; Classful IPv4 Addressing, Part I</a></div>
+            <div class="toc-item current" id="tocCurrent">Module 6 &mdash; Classful IPv4 Addressing, Part II</div>
+            <div class="toc-item"><a href="Module7_IPv6-Addressing.html">Module 7 &mdash; IPv6 Addressing</a></div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item"><a href="Module9_CIDR-Network-Calculations.html">Module 9 &mdash; CIDR: Subnetting for Networks</a></div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Explain</strong> how a subnet relates to its parent network</li>
+                    <li><strong>Convert</strong> between dotted-decimal subnet masks and CIDR prefix lengths</li>
+                    <li><strong>Determine</strong> the network address, broadcast address, and usable host range of a classful network</li>
+                    <li><strong>Compare</strong> unicast, multicast, and broadcast transmissions</li>
+                </ol>
+            </div>
+            <h2>Parent Networks and Subnets</h2>
+            <p>A large network can be divided into smaller ones. The original block is the <strong>parent network</strong>; each piece is a <strong>subnet</strong>. Every address in a subnet keeps the parent&rsquo;s network bits, so a subnet always sits inside its parent.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>Example: the parent network 192.168.0.0 with mask 255.255.0.0 contains the subnet 192.168.1.0 with mask 255.255.255.0. The first 24 bits of the subnet&rsquo;s addresses are fixed; only the last 8 bits vary, giving the range 192.168.1.0&ndash;192.168.1.255.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Think of a parent network as a building and each subnet as a floor. Every room on the third floor shares the building&rsquo;s street address and the floor number; only the room number changes.</p></div>
+            </div>
+            <h2>CIDR Notation</h2>
+            <p>CIDR (Classless Inter-Domain Routing, pronounced &ldquo;cider&rdquo;) notation writes the mask as a slash and the number of 1 bits. 255.255.255.0 is 24 ones, so it is /24.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Mask</th><th>Binary</th><th>CIDR</th></tr></thead>
+                    <tbody>
+                        <tr><td>255.0.0.0</td><td><code>11111111.00000000.00000000.00000000</code></td><td>/8</td></tr>
+                        <tr><td>255.255.0.0</td><td><code>11111111.11111111.00000000.00000000</code></td><td>/16</td></tr>
+                        <tr><td>255.255.255.0</td><td><code>11111111.11111111.11111111.00000000</code></td><td>/24</td></tr>
+                        <tr><td>255.255.255.128</td><td><code>11111111.11111111.11111111.10000000</code></td><td>/25</td></tr>
+                        <tr><td>255.255.255.192</td><td><code>11111111.11111111.11111111.11000000</code></td><td>/26</td></tr>
+                        <tr><td>255.255.255.224</td><td><code>11111111.11111111.11111111.11100000</code></td><td>/27</td></tr>
+                        <tr><td>255.255.255.240</td><td><code>11111111.11111111.11111111.11110000</code></td><td>/28</td></tr>
+                        <tr><td>255.255.255.248</td><td><code>11111111.11111111.11111111.11111000</code></td><td>/29</td></tr>
+                        <tr><td>255.255.255.252</td><td><code>11111111.11111111.11111111.11111100</code></td><td>/30</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="key-concept">
+                <h4>Count the Ones</h4>
+                <p>To turn any mask into a prefix, count its 1 bits. 255.255.255.192 is 8 + 8 + 8 + 2 = 26, so it is /26. Memorize the last-octet values 128, 192, 224, 240, 248, 252, 254, 255 and you can do this instantly.</p>
+            </div>
+            <h2>Network, Broadcast, and Usable Addresses</h2>
+            <p>Two addresses in every IPv4 subnet are reserved. The <strong>network address</strong> has every host bit set to 0 and names the subnet. The <strong>broadcast address</strong> has every host bit set to 1 and reaches every host on the subnet. Everything between them is usable for hosts.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Subnet</th><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>Network 0</td><td>192.168.1.0 /24</td><td>192.168.1.1 &ndash; 192.168.1.254</td><td>192.168.1.255</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Unicast, Multicast, and Broadcast</h2>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Type</th><th>Pattern</th><th>Classroom example</th><th>Network example</th></tr></thead>
+                    <tbody>
+                        <tr><td>Unicast</td><td>One to one</td><td>Two students talking privately</td><td>A laptop loading a web page</td></tr>
+                        <tr><td>Multicast</td><td>One to a group</td><td>An instructor speaking to a study group that signed up</td><td>OSPF routers using 224.0.0.5</td></tr>
+                        <tr><td>Broadcast</td><td>One to all on the subnet</td><td>An instructor speaking to the whole room</td><td>ARP asking &ldquo;who has 192.168.1.1?&rdquo;</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>Broadcasts stop at the router. That is one of the main reasons networks are subnetted: dividing a large flat network into subnets keeps each broadcast inside a smaller group of devices, so ordinary traffic like ARP does not slow everyone down.</p></div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>Calling .255 a usable host. In 192.168.1.0/24, .0 is the network address and .255 is the broadcast address, so the usable range is .1 through .254.</p></div>
+            </div>
+            <div class="cpcc-order" data-title="Put the addresses of 192.168.1.0/24 in order, lowest to highest" data-perfect="Every subnet follows this same shape.">
+                <script type="application/json" class="cpcc-order-bank">["Network address: 192.168.1.0", "First usable host: 192.168.1.1", "Last usable host: 192.168.1.254", "Broadcast address: 192.168.1.255"]</script>
+            </div>
+            <h2>Module 6 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 30-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Pay closest attention to anything you marked Confident and still missed. That is a belief you would not think to re-check, and it is exactly what costs points on exam day.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-6.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 6 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>A subnet always sits inside its parent network and keeps the parent&rsquo;s network bits.</li>
+                    <li>CIDR notation counts the 1 bits in the mask: 255.255.255.0 is /24.</li>
+                    <li>The network address has all host bits 0; the broadcast address has all host bits 1.</li>
+                    <li>Unicast is one-to-one, multicast is one-to-group, broadcast is one-to-all on the subnet.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://professormesser.link/n009videos" target="_blank" rel="noopener">Professor Messer&rsquo;s free N10-009 course index</a>: watch <em>Classful Subnetting</em> and <em>IPv4 Subnet Masks</em> (1.7)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 9 &mdash; CIDR: Subnetting for Networks | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 3: Subnetting &middot; Module 9</div>
+            <h1 class="module-title">CIDR: Subnetting for Networks</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.7</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item"><a href="Module1_Binary-and-Decimal.html">Module 1 &mdash; Binary and Decimal Number Systems</a></div>
+            <div class="toc-item"><a href="Module2_Binary-Math.html">Module 2 &mdash; Binary Math</a></div>
+            <div class="toc-item"><a href="Module3_Hexadecimal-Part-I.html">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</a></div>
+            <div class="toc-item"><a href="Module4_Hexadecimal-Part-II.html">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</a></div>
+            <div class="toc-item"><a href="Module5_Classful-IPv4-Part-I.html">Module 5 &mdash; Classful IPv4 Addressing, Part I</a></div>
+            <div class="toc-item"><a href="Module6_Classful-IPv4-Part-II.html">Module 6 &mdash; Classful IPv4 Addressing, Part II</a></div>
+            <div class="toc-item"><a href="Module7_IPv6-Addressing.html">Module 7 &mdash; IPv6 Addressing</a></div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item current" id="tocCurrent">Module 9 &mdash; CIDR: Subnetting for Networks</div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Calculate</strong> the subnet mask that creates a required number of subnets</li>
+                    <li><strong>Choose</strong> between the hosts method and the networks method for a given scenario</li>
+                    <li><strong>Construct</strong> a network address table for the first or last subnets of a range</li>
+                    <li><strong>Determine</strong> the network and broadcast address of the subnet a host belongs to</li>
+                </ol>
+            </div>
+            <h2>Subnetting for a Number of Networks</h2>
+            <p>Sometimes the question is not &ldquo;how big?&rdquo; but &ldquo;how many?&rdquo; A building has 12 floors; a company has 50 branch links. Here you borrow bits from the host portion, starting at the most significant (left-most) host bit, until you have enough networks.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>Borrowing <em>n</em> host bits creates 2<sup>n</sup> subnets. Find the smallest <em>n</em> where 2<sup>n</sup> &ge; the number of networks required; the new prefix is the original prefix + <em>n</em>. You do not add 2 when counting networks; the reserved addresses apply to hosts, not to networks.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Each bit you borrow doubles the number of networks: 1 bit makes 2, 2 bits make 4, 3 bits make 8, and so on. Keep doubling until you have enough, and count how many bits that took.</p></div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Bits borrowed</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr></thead>
+                    <tbody>
+                        <tr><td>Networks created</td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td><td>128</td><td>256</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="key-concept">
+                <h4>Networks Grow From the Left</h4>
+                <p>Borrowed bits come from the left side of the host portion, right after the existing network bits. The more you borrow, the more networks you get and the fewer hosts each one can hold.</p>
+            </div>
+            <h3>Example 1: 15 subnets from 192.168.1.0/24</h3>
+            <p>Given <code>192.168.1.0/24</code>, what mask creates at least 15 subnets? Work it out, then open the solution.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <ol>
+                        <li>Borrow 1 bit: 2 networks. Is 2 &ge; 15? <strong>No</strong></li>
+                        <li>Borrow 2 bits: 4 networks. Is 4 &ge; 15? <strong>No</strong></li>
+                        <li>Borrow 3 bits: 8 networks. Is 8 &ge; 15? <strong>No</strong></li>
+                        <li>Borrow 4 bits: 16 networks. Is 16 &ge; 15? <strong>Yes &mdash; stop here.</strong></li>
+                    </ol>
+                    <p>Borrowing 4 bits gives /24 + 4 = /28: <strong>255.255.255.240</strong>. That creates 16 subnets of 16 addresses (14 assignable hosts each). The first three:</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Subnet</th><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>Network 0</td><td>192.168.1.0 /28</td><td>192.168.1.1 &ndash; 192.168.1.14</td><td>192.168.1.15</td></tr>
+                        <tr><td>Network 1</td><td>192.168.1.16 /28</td><td>192.168.1.17 &ndash; 192.168.1.30</td><td>192.168.1.31</td></tr>
+                        <tr><td>Network 2</td><td>192.168.1.32 /28</td><td>192.168.1.33 &ndash; 192.168.1.46</td><td>192.168.1.47</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h3>Example 2: 62 subnets from 192.64.1.0/24</h3>
+            <p>Given <code>192.64.1.0/24</code>, what mask creates at least 62 subnets? Work it out, then open the solution.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <ol>
+                        <li>Borrow 1 bit: 2 networks. Is 2 &ge; 62? <strong>No</strong></li>
+                        <li>Borrow 2 bits: 4 networks. Is 4 &ge; 62? <strong>No</strong></li>
+                        <li>Borrow 3 bits: 8 networks. Is 8 &ge; 62? <strong>No</strong></li>
+                        <li>Borrow 4 bits: 16 networks. Is 16 &ge; 62? <strong>No</strong></li>
+                        <li>Borrow 5 bits: 32 networks. Is 32 &ge; 62? <strong>No</strong></li>
+                        <li>Borrow 6 bits: 64 networks. Is 64 &ge; 62? <strong>Yes &mdash; stop here.</strong></li>
+                    </ol>
+                    <p>Borrowing 6 bits gives /24 + 6 = /30: <strong>255.255.255.252</strong>. That creates 64 subnets of 4 addresses (2 assignable hosts each). A /30 holds only two usable hosts, which is the usual size for a point-to-point link between two routers. The first three:</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Subnet</th><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>Network 0</td><td>192.64.1.0 /30</td><td>192.64.1.1 &ndash; 192.64.1.2</td><td>192.64.1.3</td></tr>
+                        <tr><td>Network 1</td><td>192.64.1.4 /30</td><td>192.64.1.5 &ndash; 192.64.1.6</td><td>192.64.1.7</td></tr>
+                        <tr><td>Network 2</td><td>192.64.1.8 /30</td><td>192.64.1.9 &ndash; 192.64.1.10</td><td>192.64.1.11</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h3>Example 3: 2,000 subnets from 172.12.0.0/16</h3>
+            <p>Given <code>172.12.0.0/16</code>, what mask creates at least 2000 subnets? Work it out, then open the solution.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <ol>
+                        <li>Borrow 1 bit: 2 networks. Is 2 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 2 bits: 4 networks. Is 4 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 3 bits: 8 networks. Is 8 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 4 bits: 16 networks. Is 16 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 5 bits: 32 networks. Is 32 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 6 bits: 64 networks. Is 64 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 7 bits: 128 networks. Is 128 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 8 bits: 256 networks. Is 256 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 9 bits: 512 networks. Is 512 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 10 bits: 1024 networks. Is 1024 &ge; 2000? <strong>No</strong></li>
+                        <li>Borrow 11 bits: 2048 networks. Is 2048 &ge; 2000? <strong>Yes &mdash; stop here.</strong></li>
+                    </ol>
+                    <p>Borrowing 11 bits gives /16 + 11 = /27: <strong>255.255.255.224</strong>. That creates 2048 subnets of 32 addresses (30 assignable hosts each). The first three:</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Subnet</th><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>Network 0</td><td>172.12.0.0 /27</td><td>172.12.0.1 &ndash; 172.12.0.30</td><td>172.12.0.31</td></tr>
+                        <tr><td>Network 1</td><td>172.12.0.32 /27</td><td>172.12.0.33 &ndash; 172.12.0.62</td><td>172.12.0.63</td></tr>
+                        <tr><td>Network 2</td><td>172.12.0.64 /27</td><td>172.12.0.65 &ndash; 172.12.0.94</td><td>172.12.0.95</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>A school district is connecting 35 buildings over point-to-point WAN links and was given one /24 for those links. Each link needs only 2 router addresses, so a /30 per link works: borrowing 6 bits gives 64 links, with room to add more buildings later.</p></div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>Adding 2 to the number of networks. The +2 rule is for hosts only. If you need 16 networks, 4 borrowed bits (16 networks) is enough.</p></div>
+            </div>
+            <div class="cpcc-order" data-title="Put the subnet-for-networks steps in order" data-perfect="That is the networks method.">
+                <script type="application/json" class="cpcc-order-bank">["Write down the original prefix", "Double the network count (2, 4, 8&hellip;) until it reaches the number needed", "Count how many bits that took", "Add those bits to the original prefix", "Convert the new prefix to a dotted-decimal mask", "List the subnets by adding the block size each time"]</script>
+            </div>
+            <h2>Practice Problems</h2>
+            <p>Some questions solve for networks and some for hosts; decide which method each one needs. Subnets are counted from Network 0.</p>
+            <ol>
+                <li>Given 192.32.1.0/24, what mask creates 50 subnets? List the first 3 subnets.</li>
+                <li>Given 172.32.0.0/16, what mask creates 128 subnets? List the first 3 subnets.</li>
+                <li>Given 193.15.6.0/24, what mask creates 16 subnets? List the first 3 subnets.</li>
+                <li>Given 192.168.1.0/24, what mask creates 12 subnets? List the first 3 subnets.</li>
+                <li>Given 173.160.0.0/16, what mask creates 200 subnets? List the first 3 subnets.</li>
+                <li>Given 129.127.0.0/16, what mask gives 100 assignable hosts per subnet? List the first 3 subnets.</li>
+                <li>Are 151.16.32.100 /28 and 151.16.32.18 /28 on the same network? Prove it.</li>
+                <li>Given 192.168.64.0/24 and 35 required subnets, find the broadcast, range, and last host of the fourth subnet.</li>
+                <li>Given 180.5.0.0/16 and 50 required subnets, list the LAST 3 subnets.</li>
+                <li>Your manager assigns 10.0.0.0/16 for a 36-floor building with 10 offices per floor and wants one subnet per office with the most hosts possible. Find the mask and the first 3 subnets.</li>
+                <li>A company leased 191.6.0.0/16 and needs 200 subnets. Find the most efficient mask and the first 3 subnets.</li>
+                <li>Which subnet is 195.16.12.129 /27 on, and what is its broadcast address?</li>
+                <li>Given 172.32.4.154 /26, find the network address of this host&rsquo;s subnet.</li>
+            </ol>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+                    <p><strong>1.</strong> 192.32.1.0/24, at least 50 subnets<br>255.255.255.252 (/30): 64 subnets of 4 addresses (2 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>192.32.1.0 /30</td><td>192.32.1.1 &ndash; 192.32.1.2</td><td>192.32.1.3</td></tr>
+                        <tr><td>192.32.1.4 /30</td><td>192.32.1.5 &ndash; 192.32.1.6</td><td>192.32.1.7</td></tr>
+                        <tr><td>192.32.1.8 /30</td><td>192.32.1.9 &ndash; 192.32.1.10</td><td>192.32.1.11</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>2.</strong> 172.32.0.0/16, at least 128 subnets<br>255.255.254.0 (/23): 128 subnets of 512 addresses (510 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>172.32.0.0 /23</td><td>172.32.0.1 &ndash; 172.32.1.254</td><td>172.32.1.255</td></tr>
+                        <tr><td>172.32.2.0 /23</td><td>172.32.2.1 &ndash; 172.32.3.254</td><td>172.32.3.255</td></tr>
+                        <tr><td>172.32.4.0 /23</td><td>172.32.4.1 &ndash; 172.32.5.254</td><td>172.32.5.255</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>3.</strong> 193.15.6.0/24, at least 16 subnets<br>255.255.255.240 (/28): 16 subnets of 16 addresses (14 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>193.15.6.0 /28</td><td>193.15.6.1 &ndash; 193.15.6.14</td><td>193.15.6.15</td></tr>
+                        <tr><td>193.15.6.16 /28</td><td>193.15.6.17 &ndash; 193.15.6.30</td><td>193.15.6.31</td></tr>
+                        <tr><td>193.15.6.32 /28</td><td>193.15.6.33 &ndash; 193.15.6.46</td><td>193.15.6.47</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>4.</strong> 192.168.1.0/24, at least 12 subnets<br>255.255.255.240 (/28): 16 subnets of 16 addresses (14 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>192.168.1.0 /28</td><td>192.168.1.1 &ndash; 192.168.1.14</td><td>192.168.1.15</td></tr>
+                        <tr><td>192.168.1.16 /28</td><td>192.168.1.17 &ndash; 192.168.1.30</td><td>192.168.1.31</td></tr>
+                        <tr><td>192.168.1.32 /28</td><td>192.168.1.33 &ndash; 192.168.1.46</td><td>192.168.1.47</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>5.</strong> 173.160.0.0/16, at least 200 subnets<br>255.255.255.0 (/24): 256 subnets of 256 addresses (254 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>173.160.0.0 /24</td><td>173.160.0.1 &ndash; 173.160.0.254</td><td>173.160.0.255</td></tr>
+                        <tr><td>173.160.1.0 /24</td><td>173.160.1.1 &ndash; 173.160.1.254</td><td>173.160.1.255</td></tr>
+                        <tr><td>173.160.2.0 /24</td><td>173.160.2.1 &ndash; 173.160.2.254</td><td>173.160.2.255</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>6.</strong> 129.127.0.0/16, 100 assignable hosts per subnet<br>255.255.255.128 (/25): 512 subnets of 128 addresses (126 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>129.127.0.0 /25</td><td>129.127.0.1 &ndash; 129.127.0.126</td><td>129.127.0.127</td></tr>
+                        <tr><td>129.127.0.128 /25</td><td>129.127.0.129 &ndash; 129.127.0.254</td><td>129.127.0.255</td></tr>
+                        <tr><td>129.127.1.0 /25</td><td>129.127.1.1 &ndash; 129.127.1.126</td><td>129.127.1.127</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>7.</strong> 151.16.32.100 /28 and 151.16.32.18 /28<br>No. .100 is in 151.16.32.96 /28 and .18 is in 151.16.32.16 /28.</p>
+                    <p><strong>8.</strong> 192.168.64.0/24, at least 35 subnets<br>255.255.255.252 (/30): 64 subnets of 4 addresses (2 assignable hosts each). The fourth subnet is 192.168.64.12 /30: hosts 192.168.64.13&ndash;192.168.64.14 (last host 192.168.64.14), broadcast 192.168.64.15.</p>
+                    <p><strong>9.</strong> 180.5.0.0/16, at least 50 subnets<br>255.255.252.0 (/22): 64 subnets of 1024 addresses (1022 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>180.5.244.0 /22</td><td>180.5.244.1 &ndash; 180.5.247.254</td><td>180.5.247.255</td></tr>
+                        <tr><td>180.5.248.0 /22</td><td>180.5.248.1 &ndash; 180.5.251.254</td><td>180.5.251.255</td></tr>
+                        <tr><td>180.5.252.0 /22</td><td>180.5.252.1 &ndash; 180.5.255.254</td><td>180.5.255.255</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>10.</strong> 10.0.0.0/16, at least 360 subnets<br>255.255.255.128 (/25): 512 subnets of 128 addresses (126 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>10.0.0.0 /25</td><td>10.0.0.1 &ndash; 10.0.0.126</td><td>10.0.0.127</td></tr>
+                        <tr><td>10.0.0.128 /25</td><td>10.0.0.129 &ndash; 10.0.0.254</td><td>10.0.0.255</td></tr>
+                        <tr><td>10.0.1.0 /25</td><td>10.0.1.1 &ndash; 10.0.1.126</td><td>10.0.1.127</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>11.</strong> 191.6.0.0/16, at least 200 subnets<br>255.255.255.0 (/24): 256 subnets of 256 addresses (254 assignable hosts each).</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Network address</th><th>Usable host range</th><th>Broadcast address</th></tr></thead>
+                    <tbody>
+                        <tr><td>191.6.0.0 /24</td><td>191.6.0.1 &ndash; 191.6.0.254</td><td>191.6.0.255</td></tr>
+                        <tr><td>191.6.1.0 /24</td><td>191.6.1.1 &ndash; 191.6.1.254</td><td>191.6.1.255</td></tr>
+                        <tr><td>191.6.2.0 /24</td><td>191.6.2.1 &ndash; 191.6.2.254</td><td>191.6.2.255</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p><strong>12.</strong> 195.16.12.129/27<br>Network 4 (counting from Network 0; the fifth subnet): 195.16.12.128 /27, broadcast 195.16.12.159.</p>
+                    <p><strong>13.</strong> 172.32.4.154/26<br>Network address 172.32.4.128 /26 (mask 255.255.255.192), broadcast 172.32.4.191.</p>
+                </div>
+            </div>
+            <h2>Module 9 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 30-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Pay closest attention to anything you marked Confident and still missed. That is a belief you would not think to re-check, and it is exactly what costs points on exam day.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-9.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 9 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>Borrowing n host bits creates 2<sup>n</sup> subnets.</li>
+                    <li>New prefix = original prefix + borrowed bits.</li>
+                    <li>No +2 when counting networks; the +2 applies to hosts.</li>
+                    <li>More networks always means fewer hosts per network.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://www.professormesser.com/network-plus/n10-009/n10-009-video/calculating-ipv4-subnets-and-hosts-n10-009/" target="_blank" rel="noopener">Professor Messer: Calculating IPv4 Subnets and Hosts &ndash; CompTIA Network+ N10-009 &ndash; 1.7</a> (free video, about 10 minutes)</li>
+                    <li><a href="https://professormesser.link/n009videos" target="_blank" rel="noopener">Professor Messer&rsquo;s free N10-009 course index</a>: watch <em>IPv4 Subnet Masks</em> and <em>Magic Number Subnetting</em> (1.7)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,350 @@
+[
+ {
+  "q": "Which address class does <code>20.131.153.72</code> belong to?",
+  "opts": [
+   "Class A",
+   "Class B",
+   "Class C",
+   "Class E"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 20, which is 00010100 in binary. Class A covers first octets 1&ndash;126."
+ },
+ {
+  "q": "Which address class does <code>38.179.30.105</code> belong to?",
+  "opts": [
+   "Class A",
+   "Class C",
+   "Class B",
+   "Class D"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 38, which is 00100110 in binary. Class A covers first octets 1&ndash;126."
+ },
+ {
+  "q": "Which address class does <code>170.233.127.32</code> belong to?",
+  "opts": [
+   "Class B",
+   "Class E",
+   "Class D",
+   "Class C"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 170, which is 10101010 in binary. Class B covers first octets 128&ndash;191."
+ },
+ {
+  "q": "Which address class does <code>146.109.62.196</code> belong to?",
+  "opts": [
+   "Class B",
+   "Class A",
+   "Class C",
+   "Class D"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 146, which is 10010010 in binary. Class B covers first octets 128&ndash;191."
+ },
+ {
+  "q": "Which address class does <code>134.195.153.204</code> belong to?",
+  "opts": [
+   "Class B",
+   "Class E",
+   "Class A",
+   "Class C"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 134, which is 10000110 in binary. Class B covers first octets 128&ndash;191."
+ },
+ {
+  "q": "Which address class does <code>215.94.36.97</code> belong to?",
+  "opts": [
+   "Class C",
+   "Class A",
+   "Class D",
+   "Class B"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 215, which is 11010111 in binary. Class C covers first octets 192&ndash;223."
+ },
+ {
+  "q": "Which address class does <code>209.4.80.44</code> belong to?",
+  "opts": [
+   "Class C",
+   "Class E",
+   "Class A",
+   "Class B"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 209, which is 11010001 in binary. Class C covers first octets 192&ndash;223."
+ },
+ {
+  "q": "Which address class does <code>213.144.35.85</code> belong to?",
+  "opts": [
+   "Class C",
+   "Class B",
+   "Class A",
+   "Class D"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 213, which is 11010101 in binary. Class C covers first octets 192&ndash;223."
+ },
+ {
+  "q": "Which address class does <code>238.42.199.87</code> belong to?",
+  "opts": [
+   "Class D",
+   "Class E",
+   "Class A",
+   "Class B"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 238, which is 11101110 in binary. Class D covers first octets 224&ndash;239."
+ },
+ {
+  "q": "Which address class does <code>228.255.60.180</code> belong to?",
+  "opts": [
+   "Class D",
+   "Class A",
+   "Class B",
+   "Class E"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 228, which is 11100100 in binary. Class D covers first octets 224&ndash;239."
+ },
+ {
+  "q": "Which address class does <code>240.92.171.72</code> belong to?",
+  "opts": [
+   "Class E",
+   "Class C",
+   "Class D",
+   "Class B"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 240, which is 11110000 in binary. Class E covers first octets 240&ndash;254."
+ },
+ {
+  "q": "Which address class does <code>251.254.36.117</code> belong to?",
+  "opts": [
+   "Class E",
+   "Class B",
+   "Class C",
+   "Class A"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The first octet is 251, which is 11111011 in binary. Class E covers first octets 240&ndash;254."
+ },
+ {
+  "q": "Which of these is an RFC 1918 private IPv4 address?",
+  "opts": [
+   "<code>10.200.4.20</code>",
+   "<code>11.134.4.20</code>",
+   "<code>192.169.28.40</code>",
+   "<code>172.32.246.5</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The private ranges are 10.0.0.0/8, 172.16.0.0/12 (172.16&ndash;172.31), and 192.168.0.0/16. 10.200.4.20 falls inside one of them."
+ },
+ {
+  "q": "Which of these is an RFC 1918 private IPv4 address?",
+  "opts": [
+   "<code>172.31.10.5</code>",
+   "<code>172.32.67.5</code>",
+   "<code>9.41.3.3</code>",
+   "<code>100.226.8.8</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The private ranges are 10.0.0.0/8, 172.16.0.0/12 (172.16&ndash;172.31), and 192.168.0.0/16. 172.31.10.5 falls inside one of them."
+ },
+ {
+  "q": "Which of these is an RFC 1918 private IPv4 address?",
+  "opts": [
+   "<code>192.168.5.40</code>",
+   "<code>9.192.3.3</code>",
+   "<code>172.15.32.1</code>",
+   "<code>193.168.225.40</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The private ranges are 10.0.0.0/8, 172.16.0.0/12 (172.16&ndash;172.31), and 192.168.0.0/16. 192.168.5.40 falls inside one of them."
+ },
+ {
+  "q": "Which of these is an RFC 1918 private IPv4 address?",
+  "opts": [
+   "<code>172.16.97.1</code>",
+   "<code>192.169.198.40</code>",
+   "<code>11.169.4.20</code>",
+   "<code>192.167.75.1</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The private ranges are 10.0.0.0/8, 172.16.0.0/12 (172.16&ndash;172.31), and 192.168.0.0/16. 172.16.97.1 falls inside one of them."
+ },
+ {
+  "q": "Which of these is an RFC 1918 private IPv4 address?",
+  "opts": [
+   "<code>10.200.125.9</code>",
+   "<code>172.32.203.5</code>",
+   "<code>11.239.4.20</code>",
+   "<code>100.92.8.8</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The private ranges are 10.0.0.0/8, 172.16.0.0/12 (172.16&ndash;172.31), and 192.168.0.0/16. 10.200.125.9 falls inside one of them."
+ },
+ {
+  "q": "Which of these is an RFC 1918 private IPv4 address?",
+  "opts": [
+   "<code>192.168.13.254</code>",
+   "<code>172.32.5.5</code>",
+   "<code>9.82.3.3</code>",
+   "<code>172.33.201.9</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "The private ranges are 10.0.0.0/8, 172.16.0.0/12 (172.16&ndash;172.31), and 192.168.0.0/16. 192.168.13.254 falls inside one of them."
+ },
+ {
+  "q": "What is the default (classful) subnet mask for a Class B address?",
+  "opts": [
+   "255.255.0.0",
+   "255.0.0.0",
+   "255.255.255.0",
+   "255.255.255.255"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Class B uses the first two octets for the network: 255.255.0.0, or /16."
+ },
+ {
+  "q": "What is the default (classful) subnet mask for a Class A address?",
+  "opts": [
+   "255.0.0.0",
+   "255.255.0.0",
+   "255.255.255.0",
+   "0.0.0.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Class A uses only the first octet for the network: 255.0.0.0, or /8."
+ },
+ {
+  "q": "What is the default (classful) subnet mask for a Class C address?",
+  "opts": [
+   "255.255.255.0",
+   "255.255.0.0",
+   "255.0.0.0",
+   "255.255.255.128"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Class C uses the first three octets for the network: 255.255.255.0, or /24."
+ },
+ {
+  "q": "Which leading bits identify a Class C address?",
+  "opts": [
+   "<code>110</code>",
+   "<code>10</code>",
+   "<code>0</code>",
+   "<code>1110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Class A starts with 0, Class B with 10, Class C with 110, Class D with 1110, and Class E with 1111."
+ },
+ {
+  "q": "Which leading bits identify a Class B address?",
+  "opts": [
+   "<code>10</code>",
+   "<code>110</code>",
+   "<code>0</code>",
+   "<code>1111</code>"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Any first octet from 128 (10000000) to 191 (10111111) starts with 10."
+ },
+ {
+  "q": "A workstation shows the address 169.254.33.7. What does that most likely mean?",
+  "opts": [
+   "It could not reach a DHCP server and assigned itself an APIPA address",
+   "It has a static public address",
+   "It is using the loopback address",
+   "It is in the Class D multicast range"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "169.254.0.0/16 is APIPA, the IPv4 link-local range a host uses when DHCP does not answer."
+ },
+ {
+  "q": "Which address is the IPv4 loopback (localhost) address?",
+  "opts": [
+   "127.0.0.1",
+   "169.254.0.1",
+   "192.168.0.1",
+   "0.0.0.0"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "127.0.0.0/8 is reserved for loopback; 127.0.0.1 is the standard localhost address."
+ },
+ {
+  "q": "Which class is reserved for multicast?",
+  "opts": [
+   "Class D",
+   "Class E",
+   "Class C",
+   "Class A"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Class D (224&ndash;239) carries multicast group addresses, such as OSPF&rsquo;s 224.0.0.5."
+ },
+ {
+  "q": "At which OSI layer does a MAC address operate?",
+  "opts": [
+   "Layer 2, Data Link",
+   "Layer 3, Network",
+   "Layer 4, Transport",
+   "Layer 1, Physical"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "MAC addresses are layer 2 addresses used for delivery on the local network. IP addresses are layer 3."
+ },
+ {
+  "q": "What does a switch record when a frame arrives from a MAC address it has not seen?",
+  "opts": [
+   "The source MAC address and the port it arrived on",
+   "The destination MAC address and the port it should leave on",
+   "The source IP address",
+   "Nothing until a router updates it"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Switches learn from source addresses. The destination is looked up, and flooded if unknown."
+ },
+ {
+  "q": "In a subnet mask, what do the 1 bits represent?",
+  "opts": [
+   "The network portion of the address",
+   "The host portion of the address",
+   "The broadcast address",
+   "The default gateway"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "1s mark network bits and 0s mark host bits, and the 1s are always contiguous from the left."
+ }
+]

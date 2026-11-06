@@ -1,0 +1,338 @@
+[
+ {
+  "q": "Convert the IPv6 hextet <code>2662</code> to binary.",
+  "opts": [
+   "<code>0010 0110 0110 0010</code>",
+   "<code>0110 0010 0010 0110</code>",
+   "<code>0010 0110 0010 0010</code>",
+   "<code>0010 0111 0110 0010</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 2 = 0010, 6 = 0110, 6 = 0110, 2 = 0010."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>948e</code> to binary.",
+  "opts": [
+   "<code>1001 0100 1000 1110</code>",
+   "<code>1000 1110 1001 0100</code>",
+   "<code>1001 0100 1000 1100</code>",
+   "<code>1001 0110 1000 1110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 9 = 1001, 4 = 0100, 8 = 1000, E = 1110."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>652e</code> to binary.",
+  "opts": [
+   "<code>0110 0101 0010 1110</code>",
+   "<code>0010 1110 0110 0101</code>",
+   "<code>0110 0101 0010 1010</code>",
+   "<code>0010 0101 0010 1110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 6 = 0110, 5 = 0101, 2 = 0010, E = 1110."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>299e</code> to binary.",
+  "opts": [
+   "<code>0010 1001 1001 1110</code>",
+   "<code>1001 1110 0010 1001</code>",
+   "<code>0010 1001 1001 1111</code>",
+   "<code>1010 1001 1001 1110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 2 = 0010, 9 = 1001, 9 = 1001, E = 1110."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>2737</code> to binary.",
+  "opts": [
+   "<code>0010 0111 0011 0111</code>",
+   "<code>0011 0111 0010 0111</code>",
+   "<code>0010 0111 0011 0110</code>",
+   "<code>0010 0011 0011 0111</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 2 = 0010, 7 = 0111, 3 = 0011, 7 = 0111."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>b8d6</code> to binary.",
+  "opts": [
+   "<code>1011 1000 1101 0110</code>",
+   "<code>1101 0110 1011 1000</code>",
+   "<code>1011 1000 1101 0010</code>",
+   "<code>1011 0000 1101 0110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: B = 1011, 8 = 1000, D = 1101, 6 = 0110."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>342b</code> to binary.",
+  "opts": [
+   "<code>0011 0100 0010 1011</code>",
+   "<code>0010 1011 0011 0100</code>",
+   "<code>0011 0100 0010 1111</code>",
+   "<code>0010 0100 0010 1011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 3 = 0011, 4 = 0100, 2 = 0010, B = 1011."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>788c</code> to binary.",
+  "opts": [
+   "<code>0111 1000 1000 1100</code>",
+   "<code>1000 1100 0111 1000</code>",
+   "<code>0111 1000 1001 1100</code>",
+   "<code>0111 1001 1000 1100</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 7 = 0111, 8 = 1000, 8 = 1000, C = 1100."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>56f6</code> to binary.",
+  "opts": [
+   "<code>0101 0110 1111 0110</code>",
+   "<code>1111 0110 0101 0110</code>",
+   "<code>0101 0110 1101 0110</code>",
+   "<code>0101 1110 1111 0110</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 5 = 0101, 6 = 0110, F = 1111, 6 = 0110."
+ },
+ {
+  "q": "Convert the IPv6 hextet <code>231b</code> to binary.",
+  "opts": [
+   "<code>0010 0011 0001 1011</code>",
+   "<code>0001 1011 0010 0011</code>",
+   "<code>0010 0011 0001 1010</code>",
+   "<code>0011 0011 0001 1011</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Each hex digit becomes 4 bits: 2 = 0010, 3 = 0011, 1 = 0001, B = 1011."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>0010 1000 0001 1010</code> to a hextet.",
+  "opts": [
+   "<code>281A</code>",
+   "<code>A182</code>",
+   "<code>285A</code>",
+   "<code>A81A</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 0010 = 2, 1000 = 8, 0001 = 1, 1010 = A."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>1101 0011 0001 0011</code> to a hextet.",
+  "opts": [
+   "<code>D313</code>",
+   "<code>313D</code>",
+   "<code>D353</code>",
+   "<code>D713</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 1101 = D, 0011 = 3, 0001 = 1, 0011 = 3."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>1001 1100 0001 0010</code> to a hextet.",
+  "opts": [
+   "<code>9C12</code>",
+   "<code>21C9</code>",
+   "<code>9C52</code>",
+   "<code>9E12</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 1001 = 9, 1100 = C, 0001 = 1, 0010 = 2."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>1001 0001 1101 1101</code> to a hextet.",
+  "opts": [
+   "<code>91DD</code>",
+   "<code>DD19</code>",
+   "<code>91D5</code>",
+   "<code>81DD</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 1001 = 9, 0001 = 1, 1101 = D, 1101 = D."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>0001 0111 1001 0111</code> to a hextet.",
+  "opts": [
+   "<code>1797</code>",
+   "<code>7971</code>",
+   "<code>17B7</code>",
+   "<code>3797</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 0001 = 1, 0111 = 7, 1001 = 9, 0111 = 7."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>1011 1001 1011 1101</code> to a hextet.",
+  "opts": [
+   "<code>B9BD</code>",
+   "<code>DB9B</code>",
+   "<code>B9AD</code>",
+   "<code>B1BD</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 1011 = B, 1001 = 9, 1011 = B, 1101 = D."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>0111 1011 0010 0010</code> to a hextet.",
+  "opts": [
+   "<code>7B22</code>",
+   "<code>22B7</code>",
+   "<code>7B2A</code>",
+   "<code>FB22</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 0111 = 7, 1011 = B, 0010 = 2, 0010 = 2."
+ },
+ {
+  "q": "Convert the 16-bit binary value <code>0100 1101 0101 1001</code> to a hextet.",
+  "opts": [
+   "<code>4D59</code>",
+   "<code>95D4</code>",
+   "<code>4D19</code>",
+   "<code>5D59</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Split into four 4-bit groups and convert each: 0100 = 4, 1101 = D, 0101 = 5, 1001 = 9."
+ },
+ {
+  "q": "The four hex digits of a hextet have the decimal values 4 &nbsp; 11 &nbsp; 2 &nbsp; 14. Which hextet is it?",
+  "opts": [
+   "<code>4B2E</code>",
+   "<code>4112</code>",
+   "<code>5C3F</code>",
+   "<code>E2B4</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Convert each decimal value (0&ndash;15) to one hex digit: 4 = 4, 11 = B, 2 = 2, 14 = E."
+ },
+ {
+  "q": "The four hex digits of a hextet have the decimal values 0 &nbsp; 15 &nbsp; 13 &nbsp; 3. Which hextet is it?",
+  "opts": [
+   "<code>0FD3</code>",
+   "<code>0151</code>",
+   "<code>10E4</code>",
+   "<code>3DF0</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Convert each decimal value (0&ndash;15) to one hex digit: 0 = 0, 15 = F, 13 = D, 3 = 3."
+ },
+ {
+  "q": "The four hex digits of a hextet have the decimal values 3 &nbsp; 11 &nbsp; 1 &nbsp; 8. Which hextet is it?",
+  "opts": [
+   "<code>3B18</code>",
+   "<code>3111</code>",
+   "<code>4C29</code>",
+   "<code>81B3</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Convert each decimal value (0&ndash;15) to one hex digit: 3 = 3, 11 = B, 1 = 1, 8 = 8."
+ },
+ {
+  "q": "The four hex digits of a hextet have the decimal values 9 &nbsp; 13 &nbsp; 9 &nbsp; 6. Which hextet is it?",
+  "opts": [
+   "<code>9D96</code>",
+   "<code>9139</code>",
+   "<code>AEA7</code>",
+   "<code>69D9</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Convert each decimal value (0&ndash;15) to one hex digit: 9 = 9, 13 = D, 9 = 9, 6 = 6."
+ },
+ {
+  "q": "The four hex digits of a hextet have the decimal values 14 &nbsp; 0 &nbsp; 5 &nbsp; 2. Which hextet is it?",
+  "opts": [
+   "<code>E052</code>",
+   "<code>1405</code>",
+   "<code>F163</code>",
+   "<code>250E</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Convert each decimal value (0&ndash;15) to one hex digit: 14 = E, 0 = 0, 5 = 5, 2 = 2."
+ },
+ {
+  "q": "How many bits are in one IPv6 hextet?",
+  "opts": [
+   "16",
+   "8",
+   "4",
+   "32"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "A hextet is four hex digits, and each digit is 4 bits: 4 &times; 4 = 16."
+ },
+ {
+  "q": "How many hextets make up a full IPv6 address?",
+  "opts": [
+   "8",
+   "4",
+   "6",
+   "16"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "128 bits divided into 16-bit groups gives 8 hextets."
+ },
+ {
+  "q": "Are the hextets <code>56ab</code> and <code>56AB</code> the same value?",
+  "opts": [
+   "Yes. Hex letters mean the same value in either case",
+   "No. Uppercase letters are larger",
+   "No. Lowercase is only used for MAC addresses",
+   "Only on Cisco devices"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Case does not change the value. IPv6 addresses are usually written in lowercase."
+ },
+ {
+  "q": "What is <code>0db8</code> in binary?",
+  "opts": [
+   "<code>0000 1101 1011 1000</code>",
+   "<code>1101 1011 1000</code> with no leading group",
+   "<code>0000 1011 1101 1000</code>",
+   "<code>1000 1011 1101 0000</code>"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "0 = 0000, d = 1101, b = 1011, 8 = 1000. Keep the leading 0000 so all 16 bits line up."
+ },
+ {
+  "q": "Why do IPv6 addresses use hexadecimal instead of binary or dotted decimal?",
+  "opts": [
+   "Hex shortens 128 bits to 32 characters and maps exactly to 4-bit groups",
+   "Hex is more secure",
+   "Routers can only read hex",
+   "Hex values are larger than binary values"
+  ],
+  "correct": 0,
+  "obj": "1.8",
+  "explain": "Every hex digit stands for exactly four bits, so 128 bits fit in 32 readable characters with no math lost."
+ }
+]

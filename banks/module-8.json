@@ -1,0 +1,362 @@
+[
+ {
+  "q": "Given the network <code>10.10.10.0/24</code>, what subnet mask gives at least 60 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.255.192 (/26)",
+   "255.255.255.224 (/27)",
+   "255.255.255.128 (/25)",
+   "255.255.255.240 (/28)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "60 hosts + 2 (network and broadcast) = 62 addresses. The smallest block that fits is 64 (2<sup>6</sup>), which leaves 6 host bits: /26, or 255.255.255.192."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask gives at least 9317 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.192.0 (/18)",
+   "255.255.224.0 (/19)",
+   "255.255.128.0 (/17)",
+   "255.255.240.0 (/20)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "9317 hosts + 2 (network and broadcast) = 9319 addresses. The smallest block that fits is 16384 (2<sup>14</sup>), which leaves 14 host bits: /18, or 255.255.192.0."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask gives at least 4246 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.224.0 (/19)",
+   "255.255.240.0 (/20)",
+   "255.255.192.0 (/18)",
+   "255.255.248.0 (/21)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "4246 hosts + 2 (network and broadcast) = 4248 addresses. The smallest block that fits is 8192 (2<sup>13</sup>), which leaves 13 host bits: /19, or 255.255.224.0."
+ },
+ {
+  "q": "Given the network <code>172.16.0.0/16</code>, what subnet mask gives at least 7763 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.224.0 (/19)",
+   "255.255.240.0 (/20)",
+   "255.255.192.0 (/18)",
+   "255.255.248.0 (/21)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "7763 hosts + 2 (network and broadcast) = 7765 addresses. The smallest block that fits is 8192 (2<sup>13</sup>), which leaves 13 host bits: /19, or 255.255.224.0."
+ },
+ {
+  "q": "Given the network <code>200.1.1.0/24</code>, what subnet mask gives at least 71 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.255.128 (/25)",
+   "255.255.255.192 (/26)",
+   "255.255.255.0 (/24)",
+   "255.255.255.224 (/27)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "71 hosts + 2 (network and broadcast) = 73 addresses. The smallest block that fits is 128 (2<sup>7</sup>), which leaves 7 host bits: /25, or 255.255.255.128."
+ },
+ {
+  "q": "Given the network <code>192.168.1.0/24</code>, what subnet mask gives at least 37 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.255.192 (/26)",
+   "255.255.255.224 (/27)",
+   "255.255.255.128 (/25)",
+   "255.255.255.240 (/28)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "37 hosts + 2 (network and broadcast) = 39 addresses. The smallest block that fits is 64 (2<sup>6</sup>), which leaves 6 host bits: /26, or 255.255.255.192."
+ },
+ {
+  "q": "Given the network <code>192.168.1.0/24</code>, what subnet mask gives at least 92 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.255.128 (/25)",
+   "255.255.255.192 (/26)",
+   "255.255.255.0 (/24)",
+   "255.255.255.224 (/27)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "92 hosts + 2 (network and broadcast) = 94 addresses. The smallest block that fits is 128 (2<sup>7</sup>), which leaves 7 host bits: /25, or 255.255.255.128."
+ },
+ {
+  "q": "Given the network <code>200.1.1.0/24</code>, what subnet mask gives at least 48 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.255.192 (/26)",
+   "255.255.255.224 (/27)",
+   "255.255.255.128 (/25)",
+   "255.255.255.240 (/28)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "48 hosts + 2 (network and broadcast) = 50 addresses. The smallest block that fits is 64 (2<sup>6</sup>), which leaves 6 host bits: /26, or 255.255.255.192."
+ },
+ {
+  "q": "Given the network <code>192.168.50.0/24</code>, what subnet mask gives at least 69 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.255.128 (/25)",
+   "255.255.255.192 (/26)",
+   "255.255.255.0 (/24)",
+   "255.255.255.224 (/27)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "69 hosts + 2 (network and broadcast) = 71 addresses. The smallest block that fits is 128 (2<sup>7</sup>), which leaves 7 host bits: /25, or 255.255.255.128."
+ },
+ {
+  "q": "Given the network <code>10.10.10.0/24</code>, what subnet mask gives at least 121 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.255.128 (/25)",
+   "255.255.255.192 (/26)",
+   "255.255.255.0 (/24)",
+   "255.255.255.224 (/27)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "121 hosts + 2 (network and broadcast) = 123 addresses. The smallest block that fits is 128 (2<sup>7</sup>), which leaves 7 host bits: /25, or 255.255.255.128."
+ },
+ {
+  "q": "Given the network <code>172.20.0.0/16</code>, what subnet mask gives at least 2505 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.240.0 (/20)",
+   "255.255.248.0 (/21)",
+   "255.255.224.0 (/19)",
+   "255.255.252.0 (/22)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "2505 hosts + 2 (network and broadcast) = 2507 addresses. The smallest block that fits is 4096 (2<sup>12</sup>), which leaves 12 host bits: /20, or 255.255.240.0."
+ },
+ {
+  "q": "Given the network <code>10.0.0.0/8</code>, what subnet mask gives at least 19323 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.128.0 (/17)",
+   "255.255.192.0 (/18)",
+   "255.255.0.0 (/16)",
+   "255.255.224.0 (/19)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "19323 hosts + 2 (network and broadcast) = 19325 addresses. The smallest block that fits is 32768 (2<sup>15</sup>), which leaves 15 host bits: /17, or 255.255.128.0."
+ },
+ {
+  "q": "Given the network <code>172.20.0.0/16</code>, what subnet mask gives at least 1098 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.248.0 (/21)",
+   "255.255.252.0 (/22)",
+   "255.255.240.0 (/20)",
+   "255.255.254.0 (/23)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "1098 hosts + 2 (network and broadcast) = 1100 addresses. The smallest block that fits is 2048 (2<sup>11</sup>), which leaves 11 host bits: /21, or 255.255.248.0."
+ },
+ {
+  "q": "Given the network <code>172.20.0.0/16</code>, what subnet mask gives at least 16609 assignable hosts per subnet while creating the most subnets?",
+  "opts": [
+   "255.255.128.0 (/17)",
+   "255.255.192.0 (/18)",
+   "255.255.0.0 (/16)",
+   "255.255.224.0 (/19)"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "16609 hosts + 2 (network and broadcast) = 16611 addresses. The smallest block that fits is 32768 (2<sup>15</sup>), which leaves 15 host bits: /17, or 255.255.128.0."
+ },
+ {
+  "q": "How many assignable host addresses are in a /30 subnet?",
+  "opts": [
+   "2",
+   "4",
+   "1",
+   "6"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/30 leaves 2 host bits: 2<sup>2</sup> = 4 addresses, minus the network and broadcast addresses = 2."
+ },
+ {
+  "q": "How many assignable host addresses are in a /29 subnet?",
+  "opts": [
+   "6",
+   "8",
+   "2",
+   "14"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/29 leaves 3 host bits: 2<sup>3</sup> = 8 addresses, minus the network and broadcast addresses = 6."
+ },
+ {
+  "q": "How many assignable host addresses are in a /28 subnet?",
+  "opts": [
+   "14",
+   "16",
+   "6",
+   "30"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/28 leaves 4 host bits: 2<sup>4</sup> = 16 addresses, minus the network and broadcast addresses = 14."
+ },
+ {
+  "q": "How many assignable host addresses are in a /27 subnet?",
+  "opts": [
+   "30",
+   "32",
+   "14",
+   "62"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/27 leaves 5 host bits: 2<sup>5</sup> = 32 addresses, minus the network and broadcast addresses = 30."
+ },
+ {
+  "q": "How many assignable host addresses are in a /26 subnet?",
+  "opts": [
+   "62",
+   "64",
+   "30",
+   "126"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/26 leaves 6 host bits: 2<sup>6</sup> = 64 addresses, minus the network and broadcast addresses = 62."
+ },
+ {
+  "q": "How many assignable host addresses are in a /25 subnet?",
+  "opts": [
+   "126",
+   "128",
+   "62",
+   "254"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/25 leaves 7 host bits: 2<sup>7</sup> = 128 addresses, minus the network and broadcast addresses = 126."
+ },
+ {
+  "q": "How many assignable host addresses are in a /24 subnet?",
+  "opts": [
+   "254",
+   "256",
+   "126",
+   "510"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/24 leaves 8 host bits: 2<sup>8</sup> = 256 addresses, minus the network and broadcast addresses = 254."
+ },
+ {
+  "q": "How many assignable host addresses are in a /23 subnet?",
+  "opts": [
+   "510",
+   "512",
+   "254",
+   "1022"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/23 leaves 9 host bits: 2<sup>9</sup> = 512 addresses, minus the network and broadcast addresses = 510."
+ },
+ {
+  "q": "How many assignable host addresses are in a /22 subnet?",
+  "opts": [
+   "1022",
+   "1024",
+   "510",
+   "2046"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/22 leaves 10 host bits: 2<sup>10</sup> = 1024 addresses, minus the network and broadcast addresses = 1022."
+ },
+ {
+  "q": "How many assignable host addresses are in a /20 subnet?",
+  "opts": [
+   "4094",
+   "4096",
+   "2046",
+   "8190"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "/20 leaves 12 host bits: 2<sup>12</sup> = 4096 addresses, minus the network and broadcast addresses = 4094."
+ },
+ {
+  "q": "Subnetting <code>192.168.1.0/24</code> with a /27 mask, what is the network address of Network 2 (counting the first subnet as Network 0)?",
+  "opts": [
+   "192.168.1.64",
+   "192.168.1.32",
+   "192.168.1.96",
+   "192.168.1.65"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Each /27 block holds 32 addresses, so Network 2 starts at 2 &times; 32 past the base: 192.168.1.64."
+ },
+ {
+  "q": "Subnetting <code>192.168.17.0/24</code> with a /27 mask, what is the network address of Network 3 (counting the first subnet as Network 0)?",
+  "opts": [
+   "192.168.17.96",
+   "192.168.17.64",
+   "192.168.17.128",
+   "192.168.17.97"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Each /27 block holds 32 addresses, so Network 3 starts at 3 &times; 32 past the base: 192.168.17.96."
+ },
+ {
+  "q": "Subnetting <code>172.16.0.0/16</code> with a /22 mask, what is the network address of Network 1 (counting the first subnet as Network 0)?",
+  "opts": [
+   "172.16.4.0",
+   "172.16.0.0",
+   "172.16.8.0",
+   "172.16.4.1"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Each /22 block holds 1024 addresses, so Network 1 starts at 1 &times; 1024 past the base: 172.16.4.0."
+ },
+ {
+  "q": "Subnetting <code>10.0.0.0/8</code> with a /19 mask, what is the network address of Network 2 (counting the first subnet as Network 0)?",
+  "opts": [
+   "10.0.64.0",
+   "10.0.32.0",
+   "10.0.96.0",
+   "10.0.64.1"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Each /19 block holds 8192 addresses, so Network 2 starts at 2 &times; 8192 past the base: 10.0.64.0."
+ },
+ {
+  "q": "Subnetting <code>192.168.10.0/24</code> with a /26 mask, what is the network address of Network 2 (counting the first subnet as Network 0)?",
+  "opts": [
+   "192.168.10.128",
+   "192.168.10.64",
+   "192.168.10.192",
+   "192.168.10.129"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Each /26 block holds 64 addresses, so Network 2 starts at 2 &times; 64 past the base: 192.168.10.128."
+ },
+ {
+  "q": "Subnetting <code>172.16.0.0/16</code> with a /23 mask, what is the network address of Network 2 (counting the first subnet as Network 0)?",
+  "opts": [
+   "172.16.4.0",
+   "172.16.2.0",
+   "172.16.6.0",
+   "172.16.4.1"
+  ],
+  "correct": 0,
+  "obj": "1.7",
+  "explain": "Each /23 block holds 512 addresses, so Network 2 starts at 2 &times; 512 past the base: 172.16.4.0."
+ }
+]

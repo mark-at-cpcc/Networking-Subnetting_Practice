@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 1 &mdash; Binary and Decimal Number Systems | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 1: Number Systems &middot; Module 1</div>
+            <h1 class="module-title">Binary and Decimal Number Systems</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.7</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item current" id="tocCurrent">Module 1 &mdash; Binary and Decimal Number Systems</div>
+            <div class="toc-item"><a href="Module2_Binary-Math.html">Module 2 &mdash; Binary Math</a></div>
+            <div class="toc-item"><a href="Module3_Hexadecimal-Part-I.html">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</a></div>
+            <div class="toc-item"><a href="Module4_Hexadecimal-Part-II.html">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</a></div>
+            <div class="toc-item"><a href="Module5_Classful-IPv4-Part-I.html">Module 5 &mdash; Classful IPv4 Addressing, Part I</a></div>
+            <div class="toc-item"><a href="Module6_Classful-IPv4-Part-II.html">Module 6 &mdash; Classful IPv4 Addressing, Part II</a></div>
+            <div class="toc-item"><a href="Module7_IPv6-Addressing.html">Module 7 &mdash; IPv6 Addressing</a></div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item"><a href="Module9_CIDR-Network-Calculations.html">Module 9 &mdash; CIDR: Subnetting for Networks</a></div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Explain</strong> how place value works in the decimal (base 10) and binary (base 2) number systems</li>
+                    <li><strong>Convert</strong> any 8-bit binary number to decimal without a calculator</li>
+                    <li><strong>Convert</strong> any decimal value from 0 to 255 to 8-bit binary using the placeholder method</li>
+                    <li><strong>Explain</strong> why network addresses are written as 8-bit octets</li>
+                </ol>
+            </div>
+            <h2>Why This Module Comes First</h2>
+            <p>Every IPv4 address and every subnet mask you will ever configure is a 32-bit binary number written in a form people can read. Routers and switches never see &ldquo;192.168.1.10&rdquo;; they see thirty-two 1s and 0s. Subnetting is simply the skill of reading those bits on purpose. This module gives you the one tool the rest of the site depends on: moving between decimal and binary quickly and without a calculator.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>A <strong>positional number system</strong> gives each digit a value based on its position. Each position is the system&rsquo;s base raised to a power, starting with the power of 0 on the right. Decimal is base 10 (digits 0&ndash;9); binary is base 2 (digits 0 and 1). An IPv4 address is 32 bits divided into four 8-bit <strong>octets</strong>, and each octet holds a value from 0 to 255.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>You already use place value every day: in 379, the 3 is worth 300 because of where it sits. Binary works the same way, except each place is worth twice the one to its right instead of ten times. Learn the eight place values 128, 64, 32, 16, 8, 4, 2, 1 and you can read any octet.</p></div>
+            </div>
+            <h2>The Decimal Number System</h2>
+            <p>Decimal uses ten digits because people learned to count on ten fingers. Each place is 10 raised to a power. You start on the right with the least significant digit and move left toward the most significant digit.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Place</th><th>Hundred-Thousands</th><th>Ten-Thousands</th><th>Thousands</th><th>Hundreds</th><th>Tens</th><th>Ones</th></tr></thead>
+                    <tbody>
+                        <tr><td>Power</td><td>10<sup>5</sup></td><td>10<sup>4</sup></td><td>10<sup>3</sup></td><td>10<sup>2</sup></td><td>10<sup>1</sup></td><td>10<sup>0</sup></td></tr>
+                        <tr><td>Value</td><td>100,000</td><td>10,000</td><td>1,000</td><td>100</td><td>10</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="definition">
+                <div class="definition-term">Most significant digit</div>
+                <p class="definition-text">The left-most digit, which carries the largest place value. In 1,000 the 1 is most significant because it sits in the thousands place.</p>
+            </div>
+            <p>To break a number into its parts, multiply each digit by its place value and add. For 379: (3 &times; 100) + (7 &times; 10) + (9 &times; 1) = 300 + 70 + 9 = 379.</p>
+            <h2>The Binary Number System</h2>
+            <p>A computer is built from switches that are either on or off, so it counts with two digits: 1 (on, or true) and 0 (off, or false). Each binary digit is a <strong>bit</strong>, and eight bits make a <strong>byte</strong>. In networking we call each 8-bit section of an address an <strong>octet</strong>.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Place</th><th>2<sup>7</sup></th><th>2<sup>6</sup></th><th>2<sup>5</sup></th><th>2<sup>4</sup></th><th>2<sup>3</sup></th><th>2<sup>2</sup></th><th>2<sup>1</sup></th><th>2<sup>0</sup></th></tr></thead>
+                    <tbody>
+                        <tr><td>Value</td><td><strong>128</strong></td><td><strong>64</strong></td><td><strong>32</strong></td><td><strong>16</strong></td><td><strong>8</strong></td><td><strong>4</strong></td><td><strong>2</strong></td><td><strong>1</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="key-concept">
+                <h4>Memorize the Eight Placeholders</h4>
+                <p>128, 64, 32, 16, 8, 4, 2, 1. Each is double the one to its right, and together they add up to 255. Write this row across the top of your scratch paper before every subnetting problem; on the job and on the exam, it is the fastest tool you have.</p>
+            </div>
+            <h3>Worked Example: Binary to Decimal</h3>
+            <p>Convert <code>10011011</code> to decimal. Try it on paper first, then open the solution.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <p>Write the bits under the placeholders. Every 1 means &ldquo;count this placeholder&rdquo;; every 0 means &ldquo;skip it.&rdquo;</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Placeholder</th><th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+                    <tbody>
+                        <tr><td>Bit</td><td><strong>1</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>0</strong></td><td><strong>1</strong></td><td><strong>1</strong></td></tr>
+                        <tr><td>Bit &times; Placeholder</td><td>128</td><td>0</td><td>0</td><td>16</td><td>8</td><td>0</td><td>2</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>Add the counted placeholders: 128 + 16 + 8 + 2 + 1 = <strong>155</strong>.</p>
+                </div>
+            </div>
+            <h3>Worked Example: Decimal to Binary</h3>
+            <p>Convert 194 to binary. The method is a series of yes-or-no questions, asked from left to right: <em>is the number left greater than or equal to this placeholder?</em> If yes, write a 1 and subtract. If no, write a 0 and move on.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+                    <p>Start with 194 under the 128 column and ask the question at each placeholder.</p>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Placeholder</th><th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+                    <tbody>
+                        <tr><td>Number left</td><td>194</td><td>66</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>0</td></tr>
+                        <tr><td>Is it &ge; the placeholder?</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Yes</td><td>No</td></tr>
+                        <tr><td>Bit</td><td><strong>1</strong></td><td><strong>1</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>1</strong></td><td>0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>194 &ge; 128, so write 1 and subtract (66 left). 66 &ge; 64, so write 1 and subtract (2 left). 2 is less than 32, 16, 8, and 4, so those are 0. 2 &ge; 2, so write 1 (0 left), and the last bit is 0. The answer is <strong><code>11000010</code></strong>.</p>
+                </div>
+            </div>
+            <div class="cpcc-order" data-title="Put the decimal-to-binary method in order" data-perfect="That is the method. Use it the same way every time.">
+                <script type="application/json" class="cpcc-order-bank">["Write the eight placeholders: 128, 64, 32, 16, 8, 4, 2, 1", "Start with your decimal number at the 128 placeholder", "Ask: is the number left greater than or equal to this placeholder?", "If yes, write 1 and subtract the placeholder; if no, write 0", "Move one placeholder to the right and ask again", "Read all eight bits from left to right"]</script>
+            </div>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>A help-desk ticket says a laptop with mask 255.255.255.192 cannot reach a printer. Converting 192 to <code>11000000</code> tells you only two bits of the last octet belong to the network, so that subnet holds just 64 addresses. You will build on exactly that reasoning in the CIDR modules.</p></div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>Two habits cause most wrong answers. First, dropping leading zeros: <code>101</code> and <code>00000101</code> are the same value, but only the 8-bit form lines up with the placeholders. Second, reading from the wrong end: the left-most bit is worth 128, not 1.</p></div>
+            </div>
+            <h2>Practice Problems</h2>
+            <p>Work these on paper, then open each answer key to check yourself. The practice set at the bottom of the page gives you fresh problems every attempt.</p>
+            <h3>Decimal Expanded Form</h3>
+            <p>Break each number into its digits and place values: 165, 14, 44, 195, 39.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Number</th><th>Expanded form</th></tr></thead>
+                    <tbody>
+                        <tr><td>165</td><td>(1 &times; 100) + (6 &times; 10) + (5 &times; 1) = 100 + 60 + 5 = <strong>165</strong></td></tr>
+                        <tr><td>14</td><td>(1 &times; 10) + (4 &times; 1) = 10 + 4 = <strong>14</strong></td></tr>
+                        <tr><td>44</td><td>(4 &times; 10) + (4 &times; 1) = 40 + 4 = <strong>44</strong></td></tr>
+                        <tr><td>195</td><td>(1 &times; 100) + (9 &times; 10) + (5 &times; 1) = 100 + 90 + 5 = <strong>195</strong></td></tr>
+                        <tr><td>39</td><td>(3 &times; 10) + (9 &times; 1) = 30 + 9 = <strong>39</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h3>Decimal to Binary</h3>
+            <p>Convert each to 8-bit binary: 20, 49, 211, 195.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Decimal</th><th>Binary</th><th>Placeholders used</th></tr></thead>
+                    <tbody>
+                        <tr><td>20</td><td><code>00010100</code></td><td>16 + 4</td></tr>
+                        <tr><td>49</td><td><code>00110001</code></td><td>32 + 16 + 1</td></tr>
+                        <tr><td>211</td><td><code>11010011</code></td><td>128 + 64 + 16 + 2 + 1</td></tr>
+                        <tr><td>195</td><td><code>11000011</code></td><td>128 + 64 + 2 + 1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h3>Number Systems Conversion</h3>
+            <p>Convert each decimal value to binary: 156, 227, 112, 218, 209, 114, 58, 165, 255, 23, 3, 79, 131, 224, 199, 16, 65, 196.</p>
+            <p>Then convert each binary value to decimal: <code>11111110</code>, <code>00001010</code>, <code>11000000</code>, <code>10000000</code>, <code>11110000</code>, <code>10101010</code>, <code>01010101</code>, <code>11001100</code>, <code>11011011</code>, <code>11101110</code>.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Decimal</th><th>Binary</th></tr></thead>
+                    <tbody>
+                        <tr><td>156</td><td><code>10011100</code></td></tr>
+                        <tr><td>227</td><td><code>11100011</code></td></tr>
+                        <tr><td>112</td><td><code>01110000</code></td></tr>
+                        <tr><td>218</td><td><code>11011010</code></td></tr>
+                        <tr><td>209</td><td><code>11010001</code></td></tr>
+                        <tr><td>114</td><td><code>01110010</code></td></tr>
+                        <tr><td>58</td><td><code>00111010</code></td></tr>
+                        <tr><td>165</td><td><code>10100101</code></td></tr>
+                        <tr><td>255</td><td><code>11111111</code></td></tr>
+                        <tr><td>23</td><td><code>00010111</code></td></tr>
+                        <tr><td>3</td><td><code>00000011</code></td></tr>
+                        <tr><td>79</td><td><code>01001111</code></td></tr>
+                        <tr><td>131</td><td><code>10000011</code></td></tr>
+                        <tr><td>224</td><td><code>11100000</code></td></tr>
+                        <tr><td>199</td><td><code>11000111</code></td></tr>
+                        <tr><td>16</td><td><code>00010000</code></td></tr>
+                        <tr><td>65</td><td><code>01000001</code></td></tr>
+                        <tr><td>196</td><td><code>11000100</code></td></tr>
+                        <tr><td><strong>254</strong></td><td><code>11111110</code></td></tr>
+                        <tr><td><strong>10</strong></td><td><code>00001010</code></td></tr>
+                        <tr><td><strong>192</strong></td><td><code>11000000</code></td></tr>
+                        <tr><td><strong>128</strong></td><td><code>10000000</code></td></tr>
+                        <tr><td><strong>240</strong></td><td><code>11110000</code></td></tr>
+                        <tr><td><strong>170</strong></td><td><code>10101010</code></td></tr>
+                        <tr><td><strong>85</strong></td><td><code>01010101</code></td></tr>
+                        <tr><td><strong>204</strong></td><td><code>11001100</code></td></tr>
+                        <tr><td><strong>219</strong></td><td><code>11011011</code></td></tr>
+                        <tr><td><strong>238</strong></td><td><code>11101110</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h2>Module 1 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 37-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Watch the questions you marked Confident but missed. Those are beliefs you would not think to double-check, and they are the ones that cost points on exam day.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-1.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 1 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>Every position in a number is the base raised to a power, starting with the power of 0 on the right.</li>
+                    <li>The eight binary placeholders are 128, 64, 32, 16, 8, 4, 2, and 1, and they add up to 255.</li>
+                    <li>Binary to decimal: add the placeholders that hold a 1.</li>
+                    <li>Decimal to binary: ask &ldquo;is the number left &ge; this placeholder?&rdquo; from left to right, subtracting on every yes.</li>
+                    <li>Always write octets with all 8 bits so the placeholders line up.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://www.professormesser.com/network-plus/n10-009/n10-009-video/binary-math-n10-009/" target="_blank" rel="noopener">Professor Messer: Binary Math &ndash; CompTIA Network+ N10-009 &ndash; 1.7</a> (free video, about 9 minutes)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets | CompTIA Network+</title>
+    <link rel="stylesheet" href="../_design/cpcc-course-design.css">
+    <link rel="stylesheet" href="../_design/cpcc-engine.css">
+    <script src="../_design/cpcc-course-design.js" defer></script>
+    <script src="../_design/cpcc-quiz-engine.js" defer></script>
+    <script src="../_design/cpcc-order.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <header class="module-header">
+            <div class="module-label">Subnetting Practice Site &middot; Part 1: Number Systems &middot; Module 4</div>
+            <h1 class="module-title">Hexadecimal, Part II: IPv6 Hextets</h1>
+            <p class="module-subtitle">CompTIA Network+ - Objective 1.8</p>
+        </header>
+        <nav class="toc" id="tocNav">
+            <div class="toc-header">Table of Contents</div>
+            <div class="toc-item"><a href="Module1_Binary-and-Decimal.html">Module 1 &mdash; Binary and Decimal Number Systems</a></div>
+            <div class="toc-item"><a href="Module2_Binary-Math.html">Module 2 &mdash; Binary Math</a></div>
+            <div class="toc-item"><a href="Module3_Hexadecimal-Part-I.html">Module 3 &mdash; Hexadecimal, Part I: MAC Addresses</a></div>
+            <div class="toc-item current" id="tocCurrent">Module 4 &mdash; Hexadecimal, Part II: IPv6 Hextets</div>
+            <div class="toc-item"><a href="Module5_Classful-IPv4-Part-I.html">Module 5 &mdash; Classful IPv4 Addressing, Part I</a></div>
+            <div class="toc-item"><a href="Module6_Classful-IPv4-Part-II.html">Module 6 &mdash; Classful IPv4 Addressing, Part II</a></div>
+            <div class="toc-item"><a href="Module7_IPv6-Addressing.html">Module 7 &mdash; IPv6 Addressing</a></div>
+            <div class="toc-item"><a href="Module8_CIDR-Host-Calculations.html">Module 8 &mdash; CIDR: Subnetting for Hosts</a></div>
+            <div class="toc-item"><a href="Module9_CIDR-Network-Calculations.html">Module 9 &mdash; CIDR: Subnetting for Networks</a></div>
+            <div class="toc-item"><a href="Module10_VLSM.html">Module 10 &mdash; Variable-Length Subnet Masking (VLSM)</a></div>
+            <div class="toc-item"><a href="../index.html" data-contents-link>Return to Site Index</a></div>
+        </nav>
+        <div class="content-area">
+            <div class="objectives-box">
+                <h3>Learning Objectives</h3>
+                <p>When you finish this module, you will be able to:</p>
+                <ol>
+                    <li><strong>Convert</strong> a four-digit IPv6 hextet to 16-bit binary</li>
+                    <li><strong>Convert</strong> a 16-bit binary value to a hextet by grouping bits in fours</li>
+                    <li><strong>Explain</strong> why IPv6 uses hexadecimal to write 128-bit addresses</li>
+                </ol>
+            </div>
+            <h2>From Two Hex Digits to Four</h2>
+            <p>In Module 3 you converted hex two digits (one byte) at a time. IPv6 addresses use the exact same substitution, just four digits at a time. Each group of four hex digits is a <strong>hextet</strong>, and it holds 16 bits. Get comfortable here, and IPv6 addresses in Module 7 will read like ordinary numbers.</p>
+            <div class="tech-box">
+                <div class="callout-title">Technical Overview</div>
+                <div class="callout-content"><p>An IPv6 address is 128 bits written as eight 16-bit hextets in hexadecimal, separated by colons. Each hextet is four hex digits, and each digit maps to one 4-bit group, so conversion between a hextet and binary is substitution, digit by digit.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>A hextet is four Module 3 conversions in a row. Look up each character, write four bits, and keep going. Nothing new, just longer.</p></div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Hex</th><th>Decimal</th><th>Binary</th></tr></thead>
+                    <tbody>
+                        <tr><td>0</td><td>0</td><td><code>0000</code></td></tr>
+                        <tr><td>1</td><td>1</td><td><code>0001</code></td></tr>
+                        <tr><td>2</td><td>2</td><td><code>0010</code></td></tr>
+                        <tr><td>3</td><td>3</td><td><code>0011</code></td></tr>
+                        <tr><td>4</td><td>4</td><td><code>0100</code></td></tr>
+                        <tr><td>5</td><td>5</td><td><code>0101</code></td></tr>
+                        <tr><td>6</td><td>6</td><td><code>0110</code></td></tr>
+                        <tr><td>7</td><td>7</td><td><code>0111</code></td></tr>
+                        <tr><td>8</td><td>8</td><td><code>1000</code></td></tr>
+                        <tr><td>9</td><td>9</td><td><code>1001</code></td></tr>
+                        <tr><td>A</td><td>10</td><td><code>1010</code></td></tr>
+                        <tr><td>B</td><td>11</td><td><code>1011</code></td></tr>
+                        <tr><td>C</td><td>12</td><td><code>1100</code></td></tr>
+                        <tr><td>D</td><td>13</td><td><code>1101</code></td></tr>
+                        <tr><td>E</td><td>14</td><td><code>1110</code></td></tr>
+                        <tr><td>F</td><td>15</td><td><code>1111</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Worked Example: Hextets to Binary</h3>
+            <p>Take the address <code>2201:0db8:3c4d:2012:0000:0000:1234:56ab</code>. Convert the first hextet, <code>2201</code>, and the last, <code>56ab</code>.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Hextet</th><th>Digit-by-digit</th><th>16-bit binary</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>2201</code></td><td>2 = 0010, 2 = 0010, 0 = 0000, 1 = 0001</td><td><code>0010 0010 0000 0001</code></td></tr>
+                        <tr><td><code>56ab</code></td><td>5 = 0101, 6 = 0110, a = 1010, b = 1011</td><td><code>0101 0110 1010 1011</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>Keep leading zeros in each 4-bit group, so every hextet is exactly 16 bits.</p>
+                </div>
+            </div>
+            <h3>Worked Example: Binary to a Hextet</h3>
+            <p>Convert <code>1100 1010 1011 1111</code> to hex. Split the bits into groups of four, find each group&rsquo;s value with the placeholders 8, 4, 2, 1, and look up the hex digit.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Worked Solution</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Group</th><th>Value</th><th>Hex</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>1100</code></td><td>8 + 4 = 12</td><td>C</td></tr>
+                        <tr><td><code>1010</code></td><td>8 + 2 = 10</td><td>A</td></tr>
+                        <tr><td><code>1011</code></td><td>8 + 2 + 1 = 11</td><td>B</td></tr>
+                        <tr><td><code>1111</code></td><td>8 + 4 + 2 + 1 = 15</td><td>F</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                    <p>The hextet is <strong><code>CABF</code></strong>.</p>
+                </div>
+            </div>
+            <div class="key-concept">
+                <h4>Always Group From the Right</h4>
+                <p>When a binary string is not a multiple of four bits, add zeros on the <em>left</em> and group from the right. <code>1 1011</code> is <code>0001 1011</code> = <code>1B</code>, never <code>1101 1</code>.</p>
+            </div>
+            <div class="callout callout-tip">
+                <div class="callout-title">On the Job</div>
+                <div class="callout-content"><p>Firewall logs and packet captures often show IPv6 addresses in full, while configuration screens show them compressed. Being able to read a hextet in binary is what lets you check whether two addresses fall in the same /64 network without a calculator.</p></div>
+            </div>
+            <div class="callout callout-warning">
+                <div class="callout-title">Where Students Trip</div>
+                <div class="callout-content"><p>Dropping the leading zeros of a group. In <code>0db8</code>, the first digit is 0, which is <code>0000</code>; writing only <code>1101 1011 1000</code> leaves you with 12 bits and shifts everything after it.</p></div>
+            </div>
+            <div class="cpcc-order" data-title="Put the binary-to-hextet steps in order" data-perfect="That is the method for every hextet.">
+                <script type="application/json" class="cpcc-order-bank">["Write the 16 bits in four groups of four, starting from the right", "Add the 8, 4, 2, 1 values for the 1 bits in each group", "Change each group value (0&ndash;15) to a hex digit", "Write the four hex digits in order"]</script>
+            </div>
+            <h2>Practice Problems</h2>
+            <h3>Hextets to Binary</h3>
+            <p>Convert each to 16-bit binary: <code>A0E1</code>, <code>0AA0</code>, <code>120F</code>, <code>FEC6</code>, <code>2391</code>.</p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Hextet</th><th>Binary</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>A0E1</code></td><td><code>1010 0000 1110 0001</code></td></tr>
+                        <tr><td><code>0AA0</code></td><td><code>0000 1010 1010 0000</code></td></tr>
+                        <tr><td><code>120F</code></td><td><code>0001 0010 0000 1111</code></td></tr>
+                        <tr><td><code>FEC6</code></td><td><code>1111 1110 1100 0110</code></td></tr>
+                        <tr><td><code>2391</code></td><td><code>0010 0011 1001 0001</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h3>Number Systems Conversion</h3>
+            <p>In the first list, each set of four numbers is the decimal value of one hex digit (for example, 11 2 3 4 = <code>B234</code>). Give the hextet and its 16-bit binary. Then convert each binary value to a hextet, and each hextet to binary.</p>
+            <p><strong>Digit values:</strong> 11 2 3 4; 12 15 1 3; 9 13 4 0; 1 15 0 3; 8 9 7 15; 4 1 14 10; 11 15 2 3; 12 10 1 1; 13 14 2 9; 9 1 0 8; 8 7 15 6; 1 14 11 2; 12 10 15 1<br><strong>Binary values:</strong> <code>1011 0110 0111 0001</code>, <code>1000 1010 1011 1111</code>, <code>1100 1100 0110 1010</code>, <code>1000 0110 1011 1100</code>, <code>1101 1101 1011 0000</code>, <code>0001 1110 1001 1011</code>, <code>0100 0111 1111 1010</code>, <code>1101 1100 0100 1000</code>, <code>0000 1100 0001 0011</code>, <code>1111 1010 0000 0110</code>, <code>1010 1100 0000 1110</code>, <code>1100 1010 1011 1111</code>, <code>1101 1100 1011 1110</code>, <code>1110 0001 1111 0010</code>, <code>0000 1011 1010 1101</code><br><strong>Hextets:</strong> <code>B3A1</code>, <code>FF12</code>, <code>2A01</code>, <code>ABF0</code>, <code>123D</code>, <code>4C0F</code>, <code>A0B1</code>, <code>F4A1</code>, <code>ADB2</code>, <code>148B</code>, <code>A76F</code>, <code>B107</code>, <code>FE90</code>, <code>C1FA</code>, <code>A108</code></p>
+            <div class="solution-toggle">
+                <div class="solution-bar">Show the Answers</div>
+                <div class="solution-body">
+            <div class="table-container">
+                <table>
+                    <thead><tr><th>Digit values</th><th>Binary</th><th>Hextet</th></tr></thead>
+                    <tbody>
+                        <tr><td>11 2 3 4</td><td><code>1011 0010 0011 0100</code></td><td><code>B234</code></td></tr>
+                        <tr><td>12 15 1 3</td><td><code>1100 1111 0001 0011</code></td><td><code>CF13</code></td></tr>
+                        <tr><td>9 13 4 0</td><td><code>1001 1101 0100 0000</code></td><td><code>9D40</code></td></tr>
+                        <tr><td>1 15 0 3</td><td><code>0001 1111 0000 0011</code></td><td><code>1F03</code></td></tr>
+                        <tr><td>8 9 7 15</td><td><code>1000 1001 0111 1111</code></td><td><code>897F</code></td></tr>
+                        <tr><td>4 1 14 10</td><td><code>0100 0001 1110 1010</code></td><td><code>41EA</code></td></tr>
+                        <tr><td>11 15 2 3</td><td><code>1011 1111 0010 0011</code></td><td><code>BF23</code></td></tr>
+                        <tr><td>12 10 1 1</td><td><code>1100 1010 0001 0001</code></td><td><code>CA11</code></td></tr>
+                        <tr><td>13 14 2 9</td><td><code>1101 1110 0010 1001</code></td><td><code>DE29</code></td></tr>
+                        <tr><td>9 1 0 8</td><td><code>1001 0001 0000 1000</code></td><td><code>9108</code></td></tr>
+                        <tr><td>8 7 15 6</td><td><code>1000 0111 1111 0110</code></td><td><code>87F6</code></td></tr>
+                        <tr><td>1 14 11 2</td><td><code>0001 1110 1011 0010</code></td><td><code>1EB2</code></td></tr>
+                        <tr><td>12 10 15 1</td><td><code>1100 1010 1111 0001</code></td><td><code>CAF1</code></td></tr>
+                        <tr><td>11 6 7 1</td><td><code>1011 0110 0111 0001</code></td><td><code>B671</code></td></tr>
+                        <tr><td>8 10 11 15</td><td><code>1000 1010 1011 1111</code></td><td><code>8ABF</code></td></tr>
+                        <tr><td>12 12 6 10</td><td><code>1100 1100 0110 1010</code></td><td><code>CC6A</code></td></tr>
+                        <tr><td>8 6 11 12</td><td><code>1000 0110 1011 1100</code></td><td><code>86BC</code></td></tr>
+                        <tr><td>13 13 11 0</td><td><code>1101 1101 1011 0000</code></td><td><code>DDB0</code></td></tr>
+                        <tr><td>1 14 9 11</td><td><code>0001 1110 1001 1011</code></td><td><code>1E9B</code></td></tr>
+                        <tr><td>4 7 15 10</td><td><code>0100 0111 1111 1010</code></td><td><code>47FA</code></td></tr>
+                        <tr><td>13 12 4 8</td><td><code>1101 1100 0100 1000</code></td><td><code>DC48</code></td></tr>
+                        <tr><td>0 12 1 3</td><td><code>0000 1100 0001 0011</code></td><td><code>0C13</code></td></tr>
+                        <tr><td>15 10 0 6</td><td><code>1111 1010 0000 0110</code></td><td><code>FA06</code></td></tr>
+                        <tr><td>10 12 0 14</td><td><code>1010 1100 0000 1110</code></td><td><code>AC0E</code></td></tr>
+                        <tr><td>12 10 11 15</td><td><code>1100 1010 1011 1111</code></td><td><code>CABF</code></td></tr>
+                        <tr><td>13 12 11 14</td><td><code>1101 1100 1011 1110</code></td><td><code>DCBE</code></td></tr>
+                        <tr><td>14 1 15 2</td><td><code>1110 0001 1111 0010</code></td><td><code>E1F2</code></td></tr>
+                        <tr><td>0 11 10 13</td><td><code>0000 1011 1010 1101</code></td><td><code>0BAD</code></td></tr>
+                        <tr><td>11 3 10 1</td><td><code>1011 0011 1010 0001</code></td><td><code>B3A1</code></td></tr>
+                        <tr><td>15 15 1 2</td><td><code>1111 1111 0001 0010</code></td><td><code>FF12</code></td></tr>
+                        <tr><td>2 10 0 1</td><td><code>0010 1010 0000 0001</code></td><td><code>2A01</code></td></tr>
+                        <tr><td>10 11 15 0</td><td><code>1010 1011 1111 0000</code></td><td><code>ABF0</code></td></tr>
+                        <tr><td>1 2 3 13</td><td><code>0001 0010 0011 1101</code></td><td><code>123D</code></td></tr>
+                        <tr><td>4 12 0 15</td><td><code>0100 1100 0000 1111</code></td><td><code>4C0F</code></td></tr>
+                        <tr><td>10 0 11 1</td><td><code>1010 0000 1011 0001</code></td><td><code>A0B1</code></td></tr>
+                        <tr><td>15 4 10 1</td><td><code>1111 0100 1010 0001</code></td><td><code>F4A1</code></td></tr>
+                        <tr><td>10 13 11 2</td><td><code>1010 1101 1011 0010</code></td><td><code>ADB2</code></td></tr>
+                        <tr><td>1 4 8 11</td><td><code>0001 0100 1000 1011</code></td><td><code>148B</code></td></tr>
+                        <tr><td>10 7 6 15</td><td><code>1010 0111 0110 1111</code></td><td><code>A76F</code></td></tr>
+                        <tr><td>11 1 0 7</td><td><code>1011 0001 0000 0111</code></td><td><code>B107</code></td></tr>
+                        <tr><td>15 14 9 0</td><td><code>1111 1110 1001 0000</code></td><td><code>FE90</code></td></tr>
+                        <tr><td>12 1 15 10</td><td><code>1100 0001 1111 1010</code></td><td><code>C1FA</code></td></tr>
+                        <tr><td>10 1 0 8</td><td><code>1010 0001 0000 1000</code></td><td><code>A108</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+            </div>
+            <h2>Module 4 Practice Set</h2>
+            <div class="tech-box">
+                <div class="callout-title">Practice Format</div>
+                <div class="callout-content"><p>Each attempt draws 10 random questions from a 28-question pool, and the answer choices reshuffle every time. Select an answer, mark whether you guessed, were semi-confident, or were confident, and then click <strong>Grade My Answers</strong>. This practice is ungraded; keep resetting until you score 10 out of 10 in one attempt.</p></div>
+            </div>
+            <div class="plain-box">
+                <div class="callout-title">In Plain Terms</div>
+                <div class="callout-content"><p>Pay closest attention to anything you marked Confident and still missed. That is a belief you would not think to re-check, and it is exactly what costs points on exam day.</p></div>
+            </div>
+            <div class="cpcc-quiz" data-mode="pool" data-draw="10" data-confidence="true" data-bank="../banks/module-4.json" data-perfect="Perfect set. You are ready for the next module." data-title="Module 4 Practice Set"></div>
+            <div class="summary-box">
+                <h3>In This Module You Learned</h3>
+                <ul>
+                    <li>A hextet is four hex digits, which is 16 bits.</li>
+                    <li>Hextet-to-binary conversion is four 4-bit substitutions in a row.</li>
+                    <li>Binary-to-hextet conversion starts by grouping the bits in fours from the right.</li>
+                    <li>Upper- and lowercase hex letters mean the same value.</li>
+                </ul>
+            </div>
+            <div class="references-section">
+                <h3>Go Further</h3>
+                <ul>
+                    <li><a href="https://professormesser.link/n009videos" target="_blank" rel="noopener">Professor Messer&rsquo;s free N10-009 course index</a>: watch <em>IPv6 Addressing</em> (1.8)</li>
+                    <li>Sybex <em>CompTIA Network+ Study Guide</em>, 6th ed., Chapter 7: IP Addressing</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="module-footer">
+            <p class="footer-text">CompTIA Network+ Training &nbsp;|&nbsp; &copy; 2026 Charlotte Academy of Technology Services &nbsp;|&nbsp; All Rights Reserved - Mark E Turner</p>
+        </footer>
+    </div>
+</body>
+</html>
