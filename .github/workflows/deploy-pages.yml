@@ -1,1 +1,54 @@
+# Deploys the Subnetting Practice Site to GitHub Pages using GitHub Actions.
+# Repository setting required: Settings > Pages > Build and deployment > Source = "GitHub Actions".
+name: Deploy Subnetting Practice Site
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:        # adds a "Run workflow" button for manual redeploys
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:                # one deployment at a time; never cancel one in progress
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04   # pinned so the Ubuntu 26 migration of ubuntu-latest cannot change the build
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v5
+
+      - name: Find the site folder
+        id: site
+        run: |
+          # Works whether the site files are at the repository root or inside subnetting-practice-site/
+          if [ -f index.html ]; then dir="."
+          elif [ -f subnetting-practice-site/index.html ]; then dir="subnetting-practice-site"
+          else echo "::error::index.html not found at the repository root or in subnetting-practice-site/"; exit 1
+          fi
+          echo "dir=$dir" >> "$GITHUB_OUTPUT"
+          echo "Publishing from: $dir"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ steps.site.outputs.dir }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
